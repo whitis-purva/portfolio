@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-20 bg-background/95 backdrop-blur border-b border-rule">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <img src="/nwp-logo.svg" alt="NWP" className="h-8 w-auto" />
-        </div>
-        <nav className="flex items-center gap-3 sm:gap-4 font-[500] text-text-primary">
-          <Link href="#" className="flex px-4 py-2 justify-center items-center gap-2 rounded-[6px] bg-gold hover:bg-gold-muted text-text-primary transition-colors">work</Link>
+        <header className="sticky top-0 z-20 bg-background/95 backdrop-blur border-b border-rule">
+          <div className="max-w-5xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img src="/nwp-logo.svg" alt="NWP" className="h-8 w-auto" />
+            </div>
+            <nav className="flex items-center gap-3 sm:gap-4 font-[500] text-text-primary">
+          <Link href="/" className="flex px-4 py-2 justify-center items-center gap-2 rounded-[6px] bg-gold hover:bg-gold-muted text-text-primary transition-colors">work</Link>
           <Link href="#" className="flex px-4 py-2 justify-center items-center gap-2 rounded-[6px] bg-peach hover:bg-peach-muted text-text-primary transition-colors">about</Link>
           <Link href="#" className="flex px-4 py-2 justify-center items-center gap-2 rounded-[6px] bg-pink hover:bg-pink-muted text-text-primary transition-colors">résumé</Link>
           <Link aria-label="LinkedIn" href="https://www.linkedin.com/in/" target="_blank" className="flex size-9 justify-center items-center rounded-[6px] bg-lilac hover:bg-lilac-muted text-text-primary transition-colors">

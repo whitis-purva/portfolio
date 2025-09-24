@@ -67,4 +67,40 @@ body {
   vertical-align: middle;
 }
 
+/* Remove all borders, shadows, and outlines from images */
+img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  box-sizing: content-box !important;
+}
+
+/* Specifically target project card images */
+.project-card img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+/* Target any remaining default image styling */
+img[src*="project"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  box-sizing: content-box !important;
+}
+
+/* Remove any potential browser default styling */
+img {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
 

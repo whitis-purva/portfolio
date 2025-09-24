@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Color tokens */
+:root {
+  --logo: #B8774F;
+  --text-primary: #492B0E;
+  --text-secondary: #856E40;
+  --rule: #D6BFAA;
+  --bg-primary: #FBFAF8;
+  --headline: #856E40;
+  --gold: #F5DBA0;
+  --gold-muted: #FAEDD1;
+  --peach: #FDC8AD;
+  --peach-muted: #F8DFD2;
+  --pink: #FFBDBD;
+  --pink-muted: #FCE5E5;
+  --lilac: #EEC5EE;
+  --lilac-muted: #F3E0F3;
+  --lavender: #D3C5F5;
+  --lavender-muted: #E0D5FA;
+  --blue-muted: #CFE3FF;
+}
+
+@theme inline {
+  --color-logo: var(--logo);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-rule: var(--rule);
+  --color-background: var(--bg-primary);
+  --color-headline: var(--headline);
+  --color-gold: var(--gold);
+  --color-gold-muted: var(--gold-muted);
+  --color-peach: var(--peach);
+  --color-peach-muted: var(--peach-muted);
+  --color-pink: var(--pink);
+  --color-pink-muted: var(--pink-muted);
+  --color-lilac: var(--lilac);
+  --color-lilac-muted: var(--lilac-muted);
+  --color-lavender: var(--lavender);
+  --color-lavender-muted: var(--lavender-muted);
+  --color-blue-muted: var(--blue-muted);
+  --font-sans: var(--font-quicksand);
+}
+
+@custom-media --sm (width >= 640px);
+
+/* Base */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-quicksand), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Utility helpers not covered by Tailwind tokens */
+/* Square bullet utility */
+.sq-bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--rule);
+  border-radius: 2px;
+  margin-inline: 0.6rem;
+  vertical-align: middle;
+}
+
+

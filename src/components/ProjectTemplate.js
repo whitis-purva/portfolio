@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useState } from "react";
+import ImageModal from "./ImageModal";
 
 export default function ProjectTemplate({
   title,
@@ -10,8 +12,41 @@ export default function ProjectTemplate({
   previousProject,
   nextProject,
 }) {
+  const [modalImage, setModalImage] = useState(null);
+  const [allImages, setAllImages] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openModal = (imageSrc, imageAlt, allSectionImages = []) => {
+    setModalImage({ src: imageSrc, alt: imageAlt });
+    setAllImages(allSectionImages);
+    setCurrentImageIndex(allSectionImages.findIndex(img => img.src === imageSrc));
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    setAllImages([]);
+    setCurrentImageIndex(0);
+  };
+
+  const navigateImage = (direction) => {
+    if (allImages.length === 0) return;
+    
+    let newIndex;
+    if (direction === 'next') {
+      newIndex = (currentImageIndex + 1) % allImages.length;
+    } else {
+      newIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+    }
+    
+    setCurrentImageIndex(newIndex);
+    setModalImage({
+      src: allImages[newIndex].src,
+      alt: allImages[newIndex].alt
+    });
+  };
   return (
-    <main className="max-w-6xl mx-auto px-6 sm:px-8 py-10">
+    <div>
+      <main className="max-w-6xl mx-auto px-6 sm:px-8 py-10">
       <header>
         {category && (
           <div className="text-sm font-semibold text-text-secondary uppercase tracking-wider">{category}</div>
@@ -19,7 +54,7 @@ export default function ProjectTemplate({
             <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-text-primary">{title}</h1>
       </header>
 
-        {heroImages.length > 0 && (
+        {heroImages && heroImages.length > 0 && (
           <section className="mt-8">
             {heroImages.map((img, idx) => (
               <div key={idx} className="w-full overflow-hidden">
@@ -215,7 +250,16 @@ export default function ProjectTemplate({
                         <div>
                           <div className="w-full overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src={currentSection.image} alt={currentSection.caption || currentSection.heading || title} className="block w-full h-auto border-0 outline-none" style={{ border: 'none', outline: 'none' }} />
+                                <img 
+                                  src={currentSection.image} 
+                                  alt={currentSection.caption || currentSection.heading || title} 
+                                  className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
+                                  style={{ border: 'none', outline: 'none' }}
+                                  onClick={() => {
+                                    const sectionImages = currentSection.images || (currentSection.image ? [{ src: currentSection.image, alt: currentSection.caption || currentSection.heading || title }] : []);
+                                    openModal(currentSection.image, currentSection.caption || currentSection.heading || title, sectionImages);
+                                  }}
+                                />
                           </div>
                           {currentSection.caption && (
                             <p className="text-sm text-text-secondary mt-3 italic">
@@ -237,7 +281,25 @@ export default function ProjectTemplate({
                                       <img 
                                         src={img.src} 
                                         alt={img.alt || currentSection.heading || title} 
-                                        className="block w-full h-auto" 
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 12 && currentSection.heading === "Wireframes & prototype" ? (
+                                // For 12 images in Wireframes & prototype section, 4-column grid
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img
+                                        src={img.src}
+                                        alt={img.alt || currentSection.heading || title}
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
                                       />
                                     </div>
                                   ))}
@@ -248,21 +310,23 @@ export default function ProjectTemplate({
                                   {/* Desktop image - takes 2 columns */}
                                   <div className="col-span-2 w-full overflow-hidden">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img 
-                                      src={currentSection.images[0].src} 
-                                      alt={currentSection.images[0].alt || currentSection.heading || title} 
-                                      className="block w-full h-auto border-0 outline-none" 
+                                    <img
+                                      src={currentSection.images[0].src}
+                                      alt={currentSection.images[0].alt || currentSection.heading || title}
+                                      className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
                                       style={{ border: 'none', outline: 'none' }}
+                                      onClick={() => openModal(currentSection.images[0].src, currentSection.images[0].alt || currentSection.heading || title, currentSection.images)}
                                     />
                                   </div>
                                   {/* Mobile image - takes 1 column */}
                                   <div className="col-span-1 w-full overflow-hidden">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img 
-                                      src={currentSection.images[1].src} 
-                                      alt={currentSection.images[1].alt || currentSection.heading || title} 
-                                      className="block w-full h-auto border-0 outline-none" 
+                                    <img
+                                      src={currentSection.images[1].src}
+                                      alt={currentSection.images[1].alt || currentSection.heading || title}
+                                      className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
                                       style={{ border: 'none', outline: 'none' }}
+                                      onClick={() => openModal(currentSection.images[1].src, currentSection.images[1].alt || currentSection.heading || title, currentSection.images)}
                                     />
                                   </div>
                                 </div>
@@ -272,11 +336,12 @@ export default function ProjectTemplate({
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className={`w-full overflow-hidden ${(currentSection.images.length === 5 && idx === 4) ? 'sm:col-span-2' : ''}`}>
                                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img 
-                                        src={img.src} 
-                                        alt={img.alt || currentSection.heading || title} 
-                                        className={`block h-auto border-0 outline-none ${(currentSection.images.length === 5 && idx === 4) ? 'w-1/2' : 'w-full'}`} 
+                                      <img
+                                        src={img.src}
+                                        alt={img.alt || currentSection.heading || title}
+                                        className={`block h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity ${(currentSection.images.length === 5 && idx === 4) ? 'w-1/2' : 'w-full'}`}
                                         style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
                                       />
                                     </div>
                                   ))}
@@ -334,7 +399,7 @@ export default function ProjectTemplate({
                             );
                           }
                             // Check for bold phrases like "save the business $65K annually", "perfect 5/5 SUPR-Q score", and key metrics
-                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier)/);
+                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier|improving our time to delivery|4\.7 rating in the iOS app store)/);
                           if (boldPhraseMatch) {
                             return (
                               <div key={lineIndex} className="mb-2">
@@ -371,7 +436,7 @@ export default function ProjectTemplate({
                             </div>
                           );
                         }
-                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier)/);
+                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier|improving our time to delivery|4\.7 rating in the iOS app store)/);
                         if (boldPhraseMatch) {
                           return (
                             <div key={lineIndex} className="mb-2">
@@ -430,9 +495,21 @@ export default function ProjectTemplate({
               </div>
             </div>
           </section>
-        )}
-    </main>
-  );
-}
+            )}
+        </main>
+        
+        {/* Image Modal */}
+        <ImageModal
+          isOpen={modalImage !== null}
+          onClose={closeModal}
+          imageSrc={modalImage?.src}
+          imageAlt={modalImage?.alt}
+          allImages={allImages}
+          currentIndex={currentImageIndex}
+          onNavigate={navigateImage}
+        />
+      </div>
+    );
+  }
 
 

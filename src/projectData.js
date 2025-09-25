@@ -139,9 +139,9 @@ const projects = [
       { src: "/rs-hero.png", alt: "Retirement services app dashboard" },
     ],
     keyResults: [
-      "Reduced task completion time by 50%",
-      "Achieved 90% user task success rate",
-      "Increased mobile engagement by 200%"
+      "Enabled accurate cost estimates for offshore development team",
+      "Improved time to delivery through better scope identification",
+      "Achieved 4.7 rating in iOS app store through continuous user testing"
     ],
     sections: [
       {
@@ -153,40 +153,51 @@ const projects = [
         text: "Because the necessary scope of the project was not well understood by the business stakeholders directing the requirements, I needed to support the team by visualizing the user flow to identify scope more accurately, and support the design process with user research and a wireframe prototype."
       },
       {
-        heading: "User research",
-        text: "Conducted interviews with 20+ users aged 50-65 to understand their retirement planning challenges. Key findings showed users struggled with overwhelming information and needed guidance through complex financial decisions.",
-        image: "/project3-research.png"
+        heading: "Research plan",
+        text: "Documenting a thorough research plan allowed me to gain stakeholder buy-in to fund unmoderated testing through usertesting.com so that we could move quickly and efficiently alongside development.",
+        images: [
+          { src: "/rs-research-1.png", alt: "Research plan 1" },
+          { src: "/rs-research-2.png", alt: "Research plan 2" }
+        ]
       },
       {
-        heading: "Mobile-first approach",
-        text: "Redesigned the entire experience for mobile-first usage, focusing on bite-sized interactions and progressive disclosure. Created a simplified navigation that prioritizes the most important actions.",
-        image: "/project3-mobile.png"
+        heading: "User flow",
+        text: "Business stakeholders provided minimum requirements that did not reflect the actual number of screens needed for development, creating a blocker for getting an accurate cost estimate from the offshore development team. I worked with IT architecture to understand the tech stack and visualize a user flow to facilitate better communication and accuracy.",
+        images: [
+          { src: "/rs-flow-1.png", alt: "User flow 1" },
+          { src: "/rs-flow-2.png", alt: "User flow 2" }
+        ],
+        caption: "I created user flows to include necessary functionality (such as changing your password) that weren't documented in the requirements provided by the business"
       },
       {
-        heading: "Form simplification",
-        text: "Broke down complex financial forms into digestible steps with clear progress indicators. Implemented smart defaults and contextual help to reduce user burden and increase completion rates.",
-        image: "/project3-forms.png"
-      },
-      {
-        heading: "Visual design",
-        text: "Created a calming, trustworthy visual design that reduces anxiety around financial planning. Used clear typography and intuitive icons to make complex information more accessible.",
-        image: "/project3-visual.png"
+        heading: "Wireframes & prototype",
+        text: "I designed wireframes and a prototype to test functional requirements.",
+        images: [
+          { src: "/rs-wire-1.png", alt: "Wireframe 1" },
+          { src: "/rs-wire-2.png", alt: "Wireframe 2" },
+          { src: "/rs-wire-3.png", alt: "Wireframe 3" },
+          { src: "/rs-wire-4.png", alt: "Wireframe 4" },
+          { src: "/rs-wire-5.png", alt: "Wireframe 5" },
+          { src: "/rs-wire-6.png", alt: "Wireframe 6" },
+          { src: "/rs-wire-7.png", alt: "Wireframe 7" },
+          { src: "/rs-wire-8.png", alt: "Wireframe 8" },
+          { src: "/rs-wire-9.png", alt: "Wireframe 9" },
+          { src: "/rs-wire-10.png", alt: "Wireframe 10" },
+          { src: "/rs-wire-11.png", alt: "Wireframe 11" },
+          { src: "/rs-wire-12.png", alt: "Wireframe 12" }
+        ]
       }
     ],
     results: [
-      "Average task completion time reduced from 8 minutes to 4 minutes",
-      "90% of users successfully completed their retirement planning goals",
-      "Mobile app usage increased by 200% compared to web version",
-      "User satisfaction scores improved from 3.2/5 to 4.6/5"
+      "My work, which included identifying additional necessary screens (ex. change password flow), enabled the offshore development team to provide an accurate cost estimate, improving our time to delivery.",
+      "My approach to continuous user testing also helped ensure we were shipping the best product possible, resulting in a 4.7 rating in the iOS app store."
     ]
   },
   {
     slug: "case-study-improving-lender-engagement",
     title: "Improving lender engagement",
     category: "Case Study",
-    heroImages: [
-      { src: "/project4.png", alt: "Lender engagement case study" },
-    ],
+    heroImages: null,
     keyResults: [
       "Increased lender engagement by 45%",
       "Reduced support tickets by 60%",
@@ -194,27 +205,40 @@ const projects = [
     ],
     sections: [
       {
-        heading: "Role",
-        text: "UX Researcher and Designer leading cross-functional discovery and design team"
+        heading: "Day one",
+        text: "On my first day at StackSource, I interviewed Tim, our CEO, about StackSource's purpose and business goals. While talking about business priorities, he said one thing that particularly struck me: 'We want to be the easiest way to get a commercial loan.'\n\nCommercial real estate brokering can be pretty complex. A majority of deals have unique factors that prevent them from fitting neatly into a pre-defined structure.\n\nMy job was to take this complex process, make it faster and easier for our users with innovative technology, and add business value that ultimately resulted in StackSource surpassing $1 billion in closed deals.",
+        image: "/le-1.png"
       },
       {
-        heading: "Objective",
-        text: "Improve lender engagement and reduce support burden by redesigning the lender onboarding and management experience. Current system had high abandonment rates and required extensive support intervention."
+        heading: "Understand the product and users",
+        text: "I spent the next few weeks learning how the platform works, and understanding Tim's vision. I facilitated whiteboarding sessions with our team to map out key processes in commercial real estate brokering. And I planned and executed an interview-style qualitative study with our external users, borrowers and lenders, to understand their work and needs in the platform.",
+        images: [
+          { src: "/le-2.png", alt: "Whiteboarding session with team" },
+          { src: "/le-3.png", alt: "User research findings" }
+        ]
+      },
+      {
+        heading: "Building lean personas",
+        text: "Wrapping up my initial research phase with lean personas, I considered all the data I gathered and realized that prioritizing our lender experience was the right approach. StackSource can't close deals without quoted terms from lenders.",
+        image: "/le-4.png"
       },
       {
         heading: "Research insights",
         text: "Conducted comprehensive research including user interviews, journey mapping, and analytics analysis. Key findings revealed that lenders struggled with complex workflows and unclear expectations.",
-        image: "/project4-research.png"
+        images: [
+          { src: "/le-5.png", alt: "Research insights and findings" },
+          { src: "/le-6.png", alt: "User journey mapping" }
+        ]
       },
       {
         heading: "Journey redesign",
         text: "Redesigned the entire lender journey from initial signup through ongoing management. Simplified complex processes and created clear, guided workflows that reduced cognitive load.",
-        image: "/project4-journey.png"
+        image: "/le-7.png"
       },
       {
         heading: "Interface improvements",
         text: "Updated the lender dashboard and management tools with clearer information hierarchy, better visual design, and more intuitive interactions. Focused on reducing friction and improving task completion rates.",
-        image: "/project4-interface.png"
+        image: "/le-8.png"
       }
     ],
     results: [

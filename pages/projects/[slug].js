@@ -29,7 +29,21 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const project = getProjectBySlug(params.slug);
-  return { props: { project } };
+  const allSlugs = getAllProjectSlugs();
+  const currentIndex = allSlugs.indexOf(params.slug);
+  
+  const previousProject = currentIndex > 0 ? getProjectBySlug(allSlugs[currentIndex - 1]) : null;
+  const nextProject = currentIndex < allSlugs.length - 1 ? getProjectBySlug(allSlugs[currentIndex + 1]) : null;
+  
+  return { 
+    props: { 
+      project: {
+        ...project,
+        previousProject,
+        nextProject
+      }
+    } 
+  };
 }
 
 

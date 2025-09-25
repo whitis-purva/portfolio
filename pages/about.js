@@ -31,7 +31,7 @@ export default function AboutPage() {
                   Great design is achieved by <strong>meeting both user needs and business goals</strong>.
                 </p>
                 <p className="text-lg text-text-primary leading-relaxed">
-                  As a leader, I've remained fully functional, <strong>thinking strategically while delivering tactical work</strong> and artifacts from discovery through delivery.
+                  As a leader, I&apos;ve remained fully functional, <strong>thinking strategically while delivering tactical work</strong> and artifacts from discovery through delivery.
                 </p>
               </div>
             </div>
@@ -41,13 +41,13 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-headline mb-6">My story</h2>
               <div className="space-y-4">
                 <p className="text-lg text-text-primary leading-relaxed">
-                  I've always been drawn to visual art forms throughout my life—I've been a silversmith, an award-winning knitter and hand spinner, and a costume designer. Working across these different disciplines has shaped my understanding of how form, function, and aesthetics work together.
+                  I&apos;ve always been drawn to visual art forms throughout my life—I&apos;ve been a silversmith, an award-winning knitter and hand spinner, and a costume designer. Working across these different disciplines has shaped my understanding of how form, function, and aesthetics work together.
                 </p>
                 <p className="text-lg text-text-primary leading-relaxed">
-                  My most recent creative pursuits include illustration, surface pattern design, and fine art. Since 2015, I've exhibited my drawing and painting work in group shows, solo exhibitions, and local businesses.
+                  My most recent creative pursuits include illustration, surface pattern design, and fine art. Since 2015, I&apos;ve exhibited my drawing and painting work in group shows, solo exhibitions, and local businesses.
                 </p>
                 <p className="text-lg text-text-primary leading-relaxed">
-                  My love of art intersects with my love of travel. On vacation, you might find me sketching at a museum, in a café, or on the beach. So far, I've visited 10 countries, though France is my favorite.
+                  My love of art intersects with my love of travel. On vacation, you might find me sketching at a museum, in a café, or on the beach. So far, I&apos;ve visited 10 countries, though France is my favorite.
                 </p>
               </div>
             </div>

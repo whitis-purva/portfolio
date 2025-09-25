@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import ImageModal from "./ImageModal";
 
@@ -460,12 +459,12 @@ export default function ProjectTemplate({
                           if (quoteMatch) {
                             return (
                               <div key={lineIndex} className="mb-3 pl-4 border-l-2 border-rule">
-                                <strong className="font-semibold text-text-primary">"{quoteMatch[1]}"</strong>
+                                <strong className="font-semibold text-text-primary">&ldquo;{quoteMatch[1]}&rdquo;</strong>
                               </div>
                             );
                           }
                             // Check for bold phrases like "save the business $65K annually", "perfect 5/5 SUPR-Q score", and key metrics
-                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier|improving our time to delivery|4\.7 rating in the iOS app store)/);
+                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it&apos;s easier|improving our time to delivery|4\.7 rating in the iOS app store)/);
                           if (boldPhraseMatch) {
                             return (
                               <div key={lineIndex} className="mb-2">
@@ -498,11 +497,11 @@ export default function ProjectTemplate({
                         if (quoteMatch) {
                           return (
                             <div key={lineIndex} className="mb-3 pl-4 border-l-2 border-rule">
-                              <strong className="font-semibold text-text-primary">"{quoteMatch[1]}"</strong>
+                              <strong className="font-semibold text-text-primary">&ldquo;{quoteMatch[1]}&rdquo;</strong>
                             </div>
                           );
                         }
-                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier|improving our time to delivery|4\.7 rating in the iOS app store)/);
+                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it&apos;s easier|improving our time to delivery|4\.7 rating in the iOS app store)/);
                         if (boldPhraseMatch) {
                           return (
                             <div key={lineIndex} className="mb-2">

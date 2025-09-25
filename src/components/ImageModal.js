@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt, allImages = [], currentIndex = 0, onNavigate }) {
   useEffect(() => {

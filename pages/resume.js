@@ -32,7 +32,7 @@ export default function ResumePage() {
                 </div>
                 <div className="lg:col-span-7">
                   <p className="text-lg text-text-primary leading-relaxed">
-                    I'm passionate about creating products and experiences that are valuable and equitable. An experienced practitioner and leader, I have executed work and built engaged, cross-functional teams in startup-to-enterprise environments. I believe that nurturing relationships — with team members, stakeholders, and users — is essential to delivering great design.
+                    I&apos;m passionate about creating products and experiences that are valuable and equitable. An experienced practitioner and leader, I have executed work and built engaged, cross-functional teams in startup-to-enterprise environments. I believe that nurturing relationships — with team members, stakeholders, and users — is essential to delivering great design.
                   </p>
                 </div>
               </div>

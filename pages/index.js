@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -27,8 +26,8 @@ export default function HomePage() {
             <span>LEADERSHIP</span>
           </div>
           <p className="mt-8 max-w-3xl mx-auto text-[--text-primary] text-xl font-normal leading-10">
-            I'm passionate about creating products and experiences that are valuable and
-            equitable. I'm an experienced practitioner and leader, and I have executed work and
+            I&apos;m passionate about creating products and experiences that are valuable and
+            equitable. I&apos;m an experienced practitioner and leader, and I have executed work and
             built engaged, cross-functional teams in startup-to-enterprise environments.
           </p>
         </section>

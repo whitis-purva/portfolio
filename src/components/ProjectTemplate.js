@@ -89,10 +89,13 @@ export default function ProjectTemplate({
           </section>
         )}
 
-      {(() => {
-        // Group Objective and Approach sections together for 2-column layout
-        const sectionsToRender = [];
-        let i = 0;
+            {(() => {
+              // Debug: Log the sections data
+              console.log('ProjectTemplate sections:', sections);
+              
+              // Group Objective and Approach sections together for 2-column layout
+              const sectionsToRender = [];
+              let i = 0;
         
         while (i < sections.length) {
           const currentSection = sections[i];
@@ -230,17 +233,27 @@ export default function ProjectTemplate({
                         <h2 className="text-2xl font-semibold text-headline mb-6">{currentSection.heading}</h2>
                       )}
                       
-                      {currentSection.text && (
-                        <div className="text-text-primary space-y-4">
-                          {Array.isArray(currentSection.text)
-                            ? currentSection.text.map((p, idx) => (
-                                <p key={idx} className="text-lg">{p}</p>
-                              ))
-                            : currentSection.text.split('\n\n').map((paragraph, idx) => (
-                            <p key={idx} className="text-lg">{paragraph}</p>
-                          ))}
-                        </div>
-                      )}
+                          {currentSection.text && (
+                            <div className="text-text-primary space-y-4">
+                              {Array.isArray(currentSection.text)
+                                ? currentSection.text.map((item, idx) => {
+                                    if (typeof item === 'string') {
+                                      return <p key={idx} className="text-lg">{item}</p>;
+                                    } else if (item.heading && item.content) {
+                                      return (
+                                        <div key={idx} className="space-y-4 mt-12">
+                                          <h2 className="text-2xl font-semibold text-headline mb-6">{item.heading}</h2>
+                                          <p className="text-lg">{item.content}</p>
+                                        </div>
+                                      );
+                                    }
+                                    return null;
+                                  })
+                                : currentSection.text.split('\n\n').map((paragraph, idx) => (
+                                  <p key={idx} className="text-lg">{paragraph}</p>
+                                ))}
+                            </div>
+                          )}
                     </div>
                     
                     {/* Images - right column */}
@@ -249,17 +262,32 @@ export default function ProjectTemplate({
                       {currentSection.image && (
                         <div>
                           <div className="w-full overflow-hidden">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img 
-                                  src={currentSection.image} 
-                                  alt={currentSection.caption || currentSection.heading || title} 
-                                  className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
-                                  style={{ border: 'none', outline: 'none' }}
-                                  onClick={() => {
-                                    const sectionImages = currentSection.images || (currentSection.image ? [{ src: currentSection.image, alt: currentSection.caption || currentSection.heading || title }] : []);
-                                    openModal(currentSection.image, currentSection.caption || currentSection.heading || title, sectionImages);
-                                  }}
-                                />
+                            {currentSection.image.endsWith('.mov') || currentSection.image.endsWith('.mp4') || currentSection.image.endsWith('.webm') ? (
+                              <video
+                                src={currentSection.image}
+                                controls
+                                className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                style={{ border: 'none', outline: 'none' }}
+                                onClick={() => {
+                                  const sectionImages = currentSection.images || (currentSection.image ? [{ src: currentSection.image, alt: currentSection.caption || currentSection.heading || title }] : []);
+                                  openModal(currentSection.image, currentSection.caption || currentSection.heading || title, sectionImages);
+                                }}
+                              >
+                                Your browser does not support the video tag.
+                              </video>
+                            ) : (
+                              /* eslint-disable-next-line @next/next/no-img-element */
+                              <img 
+                                src={currentSection.image} 
+                                alt={currentSection.caption || currentSection.heading || title} 
+                                className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
+                                style={{ border: 'none', outline: 'none' }}
+                                onClick={() => {
+                                  const sectionImages = currentSection.images || (currentSection.image ? [{ src: currentSection.image, alt: currentSection.caption || currentSection.heading || title }] : []);
+                                  openModal(currentSection.image, currentSection.caption || currentSection.heading || title, sectionImages);
+                                }}
+                              />
+                            )}
                           </div>
                           {currentSection.caption && (
                             <p className="text-sm text-text-secondary mt-3 italic">
@@ -274,6 +302,38 @@ export default function ProjectTemplate({
                             <div>
                               {currentSection.images.length === 3 && currentSection.heading === "User journeys" ? (
                                 // For 3 images in User journeys section, display as individual full-width images stacked vertically
+                                <div className="space-y-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img 
+                                        src={img.src} 
+                                        alt={img.alt || currentSection.heading || title} 
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 3 && currentSection.heading === "Research" ? (
+                                // For 3 images in Research section, display in 3-column grid
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img 
+                                        src={img.src} 
+                                        alt={img.alt || currentSection.heading || title} 
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 2 && currentSection.heading === "Design considerations" ? (
+                                // For 2 images in Design considerations section, display as individual full-width images stacked vertically
                                 <div className="space-y-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
@@ -305,30 +365,36 @@ export default function ProjectTemplate({
                                   ))}
                                 </div>
                               ) : currentSection.images.length === 2 && currentSection.heading === "Design" ? (
-                                // For 2 images in Design section, desktop wider than mobile
-                                <div className="grid grid-cols-3 gap-6">
-                                  {/* Desktop image - takes 2 columns */}
-                                  <div className="col-span-2 w-full overflow-hidden">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                      src={currentSection.images[0].src}
-                                      alt={currentSection.images[0].alt || currentSection.heading || title}
-                                      className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
-                                      style={{ border: 'none', outline: 'none' }}
-                                      onClick={() => openModal(currentSection.images[0].src, currentSection.images[0].alt || currentSection.heading || title, currentSection.images)}
-                                    />
-                                  </div>
-                                  {/* Mobile image - takes 1 column */}
-                                  <div className="col-span-1 w-full overflow-hidden">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                      src={currentSection.images[1].src}
-                                      alt={currentSection.images[1].alt || currentSection.heading || title}
-                                      className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
-                                      style={{ border: 'none', outline: 'none' }}
-                                      onClick={() => openModal(currentSection.images[1].src, currentSection.images[1].alt || currentSection.heading || title, currentSection.images)}
-                                    />
-                                  </div>
+                                // For 2 images in Design section, 50/50 layout
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img
+                                        src={img.src}
+                                        alt={img.alt || currentSection.heading || title}
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 2 && currentSection.heading === "Results" ? (
+                                // For 2 images in Results section, display stacked vertically
+                                <div className="space-y-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img
+                                        src={img.src}
+                                        alt={img.alt || currentSection.heading || title}
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
                                 </div>
                               ) : (
                                 // For other numbers of images, use grid layout
@@ -411,7 +477,7 @@ export default function ProjectTemplate({
                           }
                           return (
                             <div key={lineIndex} className="mb-2">
-                              {line}
+                              <span dangerouslySetInnerHTML={{ __html: line }} />
                             </div>
                           );
                         })}

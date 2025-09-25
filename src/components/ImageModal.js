@@ -43,12 +43,23 @@ export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt, allIma
           </svg>
         </button>
         <div className="flex justify-center">
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className="max-w-full object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
+          {imageSrc.endsWith('.mov') || imageSrc.endsWith('.mp4') || imageSrc.endsWith('.webm') ? (
+            <video
+              src={`${imageSrc}?t=${Date.now()}`}
+              controls
+              className="max-w-full max-h-[70vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              className="max-w-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
         </div>
         
         {/* Navigation arrows - only show if there are multiple images */}

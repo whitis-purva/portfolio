@@ -199,9 +199,9 @@ const projects = [
     category: "Case Study",
     heroImages: null,
     keyResults: [
-      "Increased lender engagement by 45%",
-      "Reduced support tickets by 60%",
-      "Improved user satisfaction scores by 35%"
+      "Achieved highest number of unique quotes to date after launch",
+      "Increased mobile user adoption with responsive design",
+      "Surpassed $1 billion in closed deals through improved platform"
     ],
     sections: [
       {
@@ -212,145 +212,163 @@ const projects = [
       {
         heading: "Understand the product and users",
         text: "I spent the next few weeks learning how the platform works, and understanding Tim's vision. I facilitated whiteboarding sessions with our team to map out key processes in commercial real estate brokering. And I planned and executed an interview-style qualitative study with our external users, borrowers and lenders, to understand their work and needs in the platform.",
-        images: [
-          { src: "/le-2.png", alt: "Whiteboarding session with team" },
-          { src: "/le-3.png", alt: "User research findings" }
-        ]
+        image: "/le-2.png"
       },
       {
         heading: "Building lean personas",
         text: "Wrapping up my initial research phase with lean personas, I considered all the data I gathered and realized that prioritizing our lender experience was the right approach. StackSource can't close deals without quoted terms from lenders.",
-        image: "/le-4.png"
+        image: "/le-3.png"
       },
       {
-        heading: "Research insights",
-        text: "Conducted comprehensive research including user interviews, journey mapping, and analytics analysis. Key findings revealed that lenders struggled with complex workflows and unclear expectations.",
+        heading: "Design considerations",
+        text: "I began designing screens, soliciting feedback, and iterating. While the design has other feature enhancements based on feedback, I focused on key user feedback themes of hierarchy, scannable data, and responsive design. StackSource is now the only responsive CRE financing platform amongst our closest competitors.",
         images: [
-          { src: "/le-5.png", alt: "Research insights and findings" },
-          { src: "/le-6.png", alt: "User journey mapping" }
+          { src: "/le-4.png", alt: "Design considerations" },
+          { src: "/le-5.png", alt: "Design considerations" }
         ]
       },
       {
-        heading: "Journey redesign",
-        text: "Redesigned the entire lender journey from initial signup through ongoing management. Simplified complex processes and created clear, guided workflows that reduced cognitive load.",
+        heading: "Quoting terms and conversions",
+        text: "Now that lenders more easily understand our deals, they may be more likely to quote. But quoting terms on the old platform required using a lengthy, clunky form that didn't provide a great experience. I believed we had an opportunity to make quoting terms faster and easier. I conducted several whiteboarding sessions with my team to understand the specific calculations and permutations in this complex process.",
+        image: "/le-6.png"
+      },
+      {
+        heading: "Screen design & prototyping",
+        text: "I conducted prototype testing with several design iterations. A strategy that helped me finalize the design was to recruit users that were internally known to be less savvy, and therefore more likely to introduce errors. Here's a bird's eye view of the screens involved in this process.",
         image: "/le-7.png"
       },
       {
-        heading: "Interface improvements",
-        text: "Updated the lender dashboard and management tools with clearer information hierarchy, better visual design, and more intuitive interactions. Focused on reducing friction and improving task completion rates.",
-        image: "/le-8.png"
+        heading: "Final product",
+        text: "Watch a lender quote terms in about 2 minutes using the new experience in the video.",
+        image: "/le-8.mov"
+      },
+      {
+        heading: "Launch and beyond",
+        text: "After launch, I continued to solicit feedback and watch user sessions to find opportunities for further improvement.",
+        image: "/le-9.png"
+      },
+      {
+        heading: "Impact",
+        text: "The speed at which conversions are happening continues to decrease, and we saw our highest number of unique quotes to date after launch. We have increasing numbers of mobile users now that we've provided a responsive experience. And we know that deal evaluation is faster and easier because our users are telling us.",
+        image: "/le-10.png"
+      },
+      {
+        heading: "Result: $1 billion closed",
+        text: "We gave our users a quick and easy experience with an innovative platform design that has an unprecedented quoting engine and is fully responsive. And our business results prove the impact.",
+        image: "/le-11.png"
       }
-    ],
-    results: [
-      "Lender engagement increased by 45% within 3 months",
-      "Support ticket volume decreased by 60%",
-      "User satisfaction scores improved from 3.1/5 to 4.2/5",
-      "Onboarding completion rate increased from 65% to 89%"
-    ]
+        ]
   },
   {
     slug: "brand-and-website-refresh",
     title: "Brand & website refresh",
     category: "Design & Leadership",
     heroImages: [
-      { src: "/project5.png", alt: "Refreshed brand identity and website design" },
+      { src: "/brand-hero.png", alt: "Refreshed brand identity and website design" },
     ],
     keyResults: [
-      "Increased website conversion by 35%",
-      "Reduced bounce rate by 25%",
-      "Improved brand recognition by 40%"
+      "Improved NPS score from -36 to 55 (64% promoters)",
+      "Enhanced brand positioning for debt and equity deals",
+      "Launched refreshed website with improved usability and brand alignment"
     ],
     sections: [
       {
         heading: "Role",
-        text: "Design Director leading cross-functional team of designers, developers, and marketers"
+        text: "Led UX, visual design, marketing strategy, and brand advisory board"
       },
       {
         heading: "Objective",
-        text: "Transform the company's outdated brand and website to better reflect our innovative technology solutions and attract enterprise clients. The existing brand felt dated and the website had poor conversion rates."
+        text: "StackSource wants to be known as a respected debt and equity shop for commercial real estate. The previous website and marketing materials used language that was heavily focused on senior debt, and our ability to do equity deals is a key differentiator. The brand needs to reflect a modern, tech-focused startup while maintaining approachability in a traditional industry."
       },
       {
-        heading: "Brand strategy",
-        text: "Conducted brand workshops with leadership team to define our positioning as a trusted technology partner. Developed new brand pillars focused on innovation, reliability, and partnership.",
-        image: "/project5-brand.png"
+        heading: "Research",
+        text: "With limited time, we drew on knowledge gleaned from product research and competitive analysis. We refined messaging with feedback from the brand advisory board, and used paid ad campaigns to test messaging and creative.",
+        images: [
+          { src: "/brand-research-1.png", alt: "Research insights" },
+          { src: "/brand-research-2.png", alt: "Competitive analysis" },
+          { src: "/brand-research-3.png", alt: "Brand advisory board feedback" }
+        ]
       },
       {
-        heading: "Visual identity",
-        text: "Created a modern, professional visual identity that balances approachability with technical sophistication. Developed a comprehensive color palette, typography system, and iconography that works across all touchpoints.",
-        image: "/project5-visual.png"
+        heading: "Logo refresh",
+        text: "The StackSource logo lacked visual weight and substance, and wasn't optimal for mobile use due to its wide and thin typeface. With a new focus on responsive design, I proposed an updated logo.",
+        images: [
+          { src: "/brand-logo-1.png", alt: "Original logo" },
+          { src: "/brand-logo-2.png", alt: "Logo iterations" },
+          { src: "/brand-logo-3.png", alt: "Logo variations" },
+          { src: "/brand-logo-5.png", alt: "Final logo design" }
+        ]
       },
       {
-        heading: "Website architecture",
-        text: "Redesigned the website information architecture to better guide visitors through our solution offerings. Created clear user paths for different audience segments and simplified the navigation structure.",
-        image: "/project5-ia.png"
+        heading: "Brand guide",
+        text: "Our goal was to create an MVP brand guide (in the interest of speed) that would keep us aligned and consistent for the first iteration of the new website. I facilitated whiteboarding sessions with our team to surface our mission, vision, and personality, and solicited feedback from our brand advisory board throughout the process.",
+        images: [
+          { src: "/brand-guide-1.png", alt: "Brand guide cover" },
+          { src: "/brand-guide-2.png", alt: "Mission and vision" },
+          { src: "/brand-guide-3.png", alt: "Brand personality" },
+          { src: "/brand-guide-4.png", alt: "Visual guidelines" }
+        ]
       },
       {
-        heading: "Component system",
-        text: "Built a scalable design system with reusable components that ensure consistency across all marketing materials. This enabled faster content creation and maintained brand consistency as the team grew.",
-        image: "/project5-components.png"
+        heading: "Website refresh",
+        text: "I focused on building important pages for usability and SEO first, with a roadmap for adding additional content after launch.",
+        images: [
+          { src: "/brand-design-1.png", alt: "Homepage design" },
+          { src: "/brand-design-2.png", alt: "Key pages design" }
+        ]
+      },
+      {
+        heading: "Results",
+        text: "The refreshed StackSource website reflects tightened messaging around value proposition and aligned visual design. Sales team satisfaction was measured using an NPS-style scale rating with the previous site as a baseline. Our score jumped from -36 (45% detractors) to 55 (64% promoters). The new brand positioning successfully differentiated StackSource as a modern, tech-focused startup while maintaining approachability in the traditional commercial real estate industry.",
+        images: [
+          { src: "/brand-results-1.png", alt: "NPS score improvement results" },
+          { src: "/brand-results-2.png", alt: "Brand positioning success metrics" }
+        ]
       }
-    ],
-    results: [
-      "Website conversion rate increased from 2.1% to 2.8%",
-      "Average bounce rate decreased from 65% to 49%",
-      "Time on site increased by 40%",
-      "Brand recognition improved by 40% in customer surveys",
-      "Marketing team productivity increased by 60% with new component system"
     ]
   },
   {
     slug: "design-system",
     title: "Design system",
     category: "Design & Leadership",
-    heroImages: [
-      { src: "/project6.png", alt: "Comprehensive design system components and documentation" },
-    ],
+    heroImages: null,
     keyResults: [
-      "Reduced design time by 50%",
-      "Improved design consistency by 90%",
-      "Accelerated development velocity by 40%"
+      "Created solid foundation for consistent product enhancements",
+      "Simplified design specs access for development teams",
+      "Reduced meeting time and improved clarity"
     ],
     sections: [
       {
         heading: "Role",
-        text: "Design Systems Lead managing team of 3 designers and collaborating with 15+ product teams"
+        text: "Project lead"
       },
       {
         heading: "Objective",
-        text: "Create a comprehensive design system that enables consistent, efficient design and development across 12+ products. The lack of standardized components was causing design inconsistencies and slowing down both design and development teams."
+        text: "The StackSource core product required segmented views with different functionality for three distinct audiences. A design system was needed to ensure consistency and facilitate efficiency in designing for this complex product."
       },
       {
-        heading: "Audit and research",
-        text: "Conducted a comprehensive audit of existing components across all products to identify patterns and inconsistencies. Interviewed 20+ designers and developers to understand their workflows and pain points.",
-        image: "/project6-audit.png"
-      },
-      {
-        heading: "Token foundation",
-        text: "Established a robust token system covering colors, typography, spacing, and elevation. Created semantic naming conventions that scale across light and dark themes while maintaining accessibility standards.",
-        image: "/project6-tokens.png"
-      },
-      {
-        heading: "Component library",
-        text: "Built 50+ reusable components with comprehensive variants and states. Each component includes detailed documentation, usage guidelines, and code examples for multiple frameworks.",
-        image: "/project6-components.png"
-      },
-      {
-        heading: "Figma integration",
-        text: "Migrated all components to Figma with auto-layout and proper component properties. Created master components that automatically update across all files when changes are made.",
-        image: "/project6-figma.png"
-      },
-      {
-        heading: "Documentation site",
-        text: "Built an interactive documentation site with live component examples, usage guidelines, and design principles. Included accessibility standards and implementation guides for developers.",
-        image: "/project6-docs.png"
+        heading: "Design system",
+        text: [
+          "We built the design system as a part of our transition to Figma. We created a style library and also built components within Figma to make future product enhancement design more efficient.",
+          {
+            heading: "Token foundation",
+            content: "Established a robust token system covering colors, typography, spacing, and elevation. Created semantic naming conventions for consistent design implementation across the product."
+          },
+          {
+            heading: "Component library", 
+            content: "Built 50+ reusable components with comprehensive variants and states. Each component includes detailed documentation and usage guidelines for the design team."
+          }
+        ],
+        images: [
+          { src: "/ds-1.png", alt: "Design system components" },
+          { src: "/ds-2.png", alt: "Figma style library" },
+          { src: "/ds-3.png", alt: "Component specifications" }
+        ]
       }
     ],
     results: [
-      "Design time reduced by 50% for new features",
-      "Design consistency improved from 60% to 95% across products",
-      "Development velocity increased by 40% with reusable components",
-      "Design system adoption reached 100% across all product teams",
-      "Reduced design QA time by 70%"
+      "StackSource now has a solid foundation for <b>consistent product enhancements</b> executed by a growing design team.",
+      "Development teams have <b>simplified access to design specs</b>, reducing meeting time and improving clarity."
     ]
   },
 ];

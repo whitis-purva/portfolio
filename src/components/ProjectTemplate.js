@@ -16,16 +16,16 @@ export default function ProjectTemplate({
         {category && (
           <div className="text-sm font-semibold text-text-secondary uppercase tracking-wider">{category}</div>
         )}
-        <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-headline">{title}</h1>
+            <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-text-primary">{title}</h1>
       </header>
 
         {heroImages.length > 0 && (
           <section className="mt-8">
             {heroImages.map((img, idx) => (
-              <div key={idx} className="w-full overflow-hidden shadow-lg">
+              <div key={idx} className="w-full overflow-hidden">
                 {/* Accept either next/image sources or static public paths */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img.src} alt={img.alt || title} className="block w-full h-auto" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={img.src} alt={img.alt || title} className="block w-full h-auto border-0 outline-none" style={{ border: 'none', outline: 'none' }} />
               </div>
             ))}
           </section>
@@ -36,7 +36,7 @@ export default function ProjectTemplate({
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Key Results heading - left column */}
               <div className="lg:col-span-1">
-                <h2 className="text-2xl font-semibold text-headline mb-6">Key Results</h2>
+                    <h2 className="text-2xl font-semibold text-headline mb-6">Key results</h2>
               </div>
               
               {/* Key Results content - right column */}
@@ -77,7 +77,9 @@ export default function ProjectTemplate({
                         ? currentSection.text.map((p, idx) => (
                             <p key={idx} className="text-lg">{p}</p>
                           ))
-                        : <p className="text-lg">{currentSection.text}</p>}
+                        : currentSection.text.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg">{paragraph}</p>
+                          ))}
                     </div>
                   </div>
                   
@@ -124,7 +126,9 @@ export default function ProjectTemplate({
                         ? currentSection.text.map((p, idx) => (
                             <p key={idx} className="text-lg">{p}</p>
                           ))
-                        : <p className="text-lg">{currentSection.text}</p>}
+                        : currentSection.text.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg">{paragraph}</p>
+                          ))}
                     </div>
                   </div>
                   
@@ -155,7 +159,9 @@ export default function ProjectTemplate({
                         ? currentSection.text.map((p, idx) => (
                             <p key={idx} className="text-lg">{p}</p>
                           ))
-                        : <p className="text-lg">{currentSection.text}</p>}
+                        : currentSection.text.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg">{paragraph}</p>
+                          ))}
                     </div>
                   </div>
                   
@@ -195,7 +201,9 @@ export default function ProjectTemplate({
                             ? currentSection.text.map((p, idx) => (
                                 <p key={idx} className="text-lg">{p}</p>
                               ))
-                            : <p className="text-lg">{currentSection.text}</p>}
+                            : currentSection.text.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg">{paragraph}</p>
+                          ))}
                         </div>
                       )}
                     </div>
@@ -206,8 +214,8 @@ export default function ProjectTemplate({
                       {currentSection.image && (
                         <div>
                           <div className="w-full overflow-hidden">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={currentSection.image} alt={currentSection.caption || currentSection.heading || title} className="block w-full h-auto" />
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={currentSection.image} alt={currentSection.caption || currentSection.heading || title} className="block w-full h-auto border-0 outline-none" style={{ border: 'none', outline: 'none' }} />
                           </div>
                           {currentSection.caption && (
                             <p className="text-sm text-text-secondary mt-3 italic">
@@ -217,24 +225,70 @@ export default function ProjectTemplate({
                         </div>
                       )}
                       
-                      {/* Multiple images (for two-column layout) */}
-                      {currentSection.images?.length > 0 && (
-                        <div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {currentSection.images.map((img, idx) => (
-                              <div key={idx} className="w-full overflow-hidden">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src={img.src} alt={img.alt || currentSection.heading || title} className="block w-full h-auto" />
-                              </div>
-                            ))}
-                          </div>
-                          {currentSection.caption && (
-                            <p className="text-sm text-text-secondary mt-3 italic text-center">
-                              {currentSection.caption}
-                            </p>
+                          {/* Multiple images (for two-column layout) */}
+                          {currentSection.images?.length > 0 && (
+                            <div>
+                              {currentSection.images.length === 3 && currentSection.heading === "User journeys" ? (
+                                // For 3 images in User journeys section, display as individual full-width images stacked vertically
+                                <div className="space-y-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img 
+                                        src={img.src} 
+                                        alt={img.alt || currentSection.heading || title} 
+                                        className="block w-full h-auto" 
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 2 && currentSection.heading === "Design" ? (
+                                // For 2 images in Design section, desktop wider than mobile
+                                <div className="grid grid-cols-3 gap-6">
+                                  {/* Desktop image - takes 2 columns */}
+                                  <div className="col-span-2 w-full overflow-hidden">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img 
+                                      src={currentSection.images[0].src} 
+                                      alt={currentSection.images[0].alt || currentSection.heading || title} 
+                                      className="block w-full h-auto border-0 outline-none" 
+                                      style={{ border: 'none', outline: 'none' }}
+                                    />
+                                  </div>
+                                  {/* Mobile image - takes 1 column */}
+                                  <div className="col-span-1 w-full overflow-hidden">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img 
+                                      src={currentSection.images[1].src} 
+                                      alt={currentSection.images[1].alt || currentSection.heading || title} 
+                                      className="block w-full h-auto border-0 outline-none" 
+                                      style={{ border: 'none', outline: 'none' }}
+                                    />
+                                  </div>
+                                </div>
+                              ) : (
+                                // For other numbers of images, use grid layout
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className={`w-full overflow-hidden ${(currentSection.images.length === 5 && idx === 4) ? 'sm:col-span-2' : ''}`}>
+                                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                                      <img 
+                                        src={img.src} 
+                                        alt={img.alt || currentSection.heading || title} 
+                                        className={`block h-auto border-0 outline-none ${(currentSection.images.length === 5 && idx === 4) ? 'w-1/2' : 'w-full'}`} 
+                                        style={{ border: 'none', outline: 'none' }}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              {currentSection.caption && (
+                                <p className="text-sm text-text-secondary mt-3 italic">
+                                  {currentSection.caption}
+                                </p>
+                              )}
+                            </div>
                           )}
-                        </div>
-                      )}
                     </div>
                   </div>
                 </section>
@@ -279,8 +333,8 @@ export default function ProjectTemplate({
                               </div>
                             );
                           }
-                          // Check for bold phrases like "save the business $65K annually" and "perfect 5/5 SUPR-Q score"
-                          const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score)/);
+                            // Check for bold phrases like "save the business $65K annually", "perfect 5/5 SUPR-Q score", and key metrics
+                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier)/);
                           if (boldPhraseMatch) {
                             return (
                               <div key={lineIndex} className="mb-2">
@@ -317,7 +371,7 @@ export default function ProjectTemplate({
                             </div>
                           );
                         }
-                        const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score)/);
+                            const boldPhraseMatch = line.match(/(save the business \$65K annually|perfect 5\/5 SUPR-Q score|mobile use increased 170%|25% YoY increase|92% of users said it's easier)/);
                         if (boldPhraseMatch) {
                           return (
                             <div key={lineIndex} className="mb-2">
@@ -327,19 +381,19 @@ export default function ProjectTemplate({
                             </div>
                           );
                         }
-                        return (
-                          <div key={lineIndex} className="mb-2">
-                            {line}
-                          </div>
-                        );
-                      })}
+                            return (
+                              <div key={lineIndex} className="mb-2">
+                                <span dangerouslySetInnerHTML={{ __html: line }} />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
-              </div>
-            </div>
-          </section>
-        )}
+              </section>
+            )}
 
         {/* Project Navigation */}
         {(previousProject || nextProject) && (

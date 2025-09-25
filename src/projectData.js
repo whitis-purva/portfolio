@@ -62,48 +62,73 @@ const projects = [
     title: "SaaS product for CRE financing",
     category: "UX Design",
     heroImages: [
-      { src: "/project2.png", alt: "Commercial real estate financing platform dashboard" },
+      { src: "/saas-product-hero.png", alt: "Commercial real estate financing platform dashboard" },
     ],
     keyResults: [
-      "Increased user onboarding completion by 40%",
-      "Reduced time-to-first-deal by 60%",
-      "Achieved 95% user satisfaction in beta testing"
+      "Mobile use increased 170% after making the platform fully responsive",
+      "25% YoY increase in unique terms quoted with new dynamic flow",
+      "92% of users said it's easier to quickly evaluate a deal post-launch"
     ],
     sections: [
       {
         heading: "Role",
-        text: "Lead UX Designer working with product management and engineering teams"
+        text: "UX strategy, product management, research, and design"
       },
       {
         heading: "Objective",
-        text: "Create an intuitive platform for commercial real estate professionals to discover, evaluate, and secure financing opportunities. The existing solution was complex and required extensive training, leading to low adoption rates."
+        text: "The StackSource CEO and CTO wanted to modernize and enhance our product, but were unsure of the right approach. After my hire, my top priority was to lead UX strategy and execute the redesign of our core product."
       },
       {
-        heading: "User research",
-        text: "Conducted 15+ interviews with CRE professionals to understand their workflow, pain points, and decision-making process. Key insights revealed that users needed to quickly compare multiple financing options while maintaining context of their specific deal requirements.",
-        image: "/project2-research.png"
+        heading: "Research & findings",
+        text: "I planned and executed a moderated study that combined user interviews and a task-based preference test. I wanted to understand the day-to-day challenges and needs of each of our external audiences, as well as establish baseline data to support design decisions.\n\nOne surprising finding was discovering a pattern of feedback on the prominence of the StackSource brand identity in the platform. I learned through industry research that status and reputation are important in the commercial real estate industry, which supported this feedback.",
+        images: [
+          { src: "/saas-research-1.png", alt: "Research findings 1" },
+          { src: "/saas-research-2.png", alt: "Research findings 2" },
+          { src: "/saas-research-3.png", alt: "Research findings 3" },
+          { src: "/saas-research-4.png", alt: "Research findings 4" },
+          { src: "/saas-research-5.png", alt: "Research findings 5" }
+        ],
+        caption: "Presentation of findings for executive leadership"
       },
       {
-        heading: "Information architecture",
-        text: "Restructured the platform around the user's deal-centric workflow rather than product-centric navigation. Created a clear hierarchy that prioritized deal creation and comparison over administrative functions.",
-        image: "/project2-ia.png"
+        heading: "Lean personas",
+        text: "Using our study findings combined with knowledge and insights from our internal subject matter experts, we created a set of lean personas for our core user base and target segments.",
+        images: [
+          { src: "/saas-persona-1.png", alt: "Persona 1" },
+          { src: "/saas-persona-2.png", alt: "Persona 2" },
+          { src: "/saas-persona-3.png", alt: "Persona 3" }
+        ],
+        caption: "A sample of the lean personas we created at StackSource"
       },
       {
-        heading: "Dashboard design",
-        text: "Designed a personalized dashboard that surfaces relevant opportunities based on user preferences and deal history. Implemented progressive disclosure to reduce cognitive load while maintaining access to advanced features.",
-        image: "/project2-dashboard.png"
+        heading: "User journeys",
+        text: "We also mapped user journeys to further consider how email and capital advisor touch points were shaping the overarching user experience. This led to enhancement and refinement of our email touch points, which are a key component of using the StackSource product.",
+        images: [
+          { src: "/saas-journey-1.png", alt: "User journey 1" },
+          { src: "/saas-journey-2.png", alt: "User journey 2" },
+          { src: "/saas-journey-3.png", alt: "User journey 3" }
+        ],
+        caption: "I created user journeys for each primary audience"
       },
       {
-        heading: "Deal comparison flow",
-        text: "Created an intuitive comparison interface that allows users to evaluate multiple financing options side-by-side. The design emphasizes key decision factors while providing easy access to detailed terms and conditions.",
-        image: "/project2-comparison.png"
+        heading: "Design",
+        text: "I solicited feedback from our users throughout the design iteration process. I took accessibility compliance into consideration, which the previous design was lacking. Most importantly, I discovered that our mobile use was steadily increasing from our analytics data, and designed the new platform to be fully responsive. (The previous platform was not.)",
+        images: [
+          { src: "/saas-design-3.png", alt: "Design screen 3" },
+          { src: "/saas-design-4.png", alt: "Design screen 4" }
+        ],
+        caption: "Desktop and mobile screens from my platform redesign"
+      },
+      {
+        heading: "Key changes",
+        text: "The transformation from our legacy platform to the new design addressed critical usability and accessibility issues. The previous platform lacked mobile responsiveness, had poor information hierarchy, and featured color choices that did not meet accessibility standards for contrast.\n\nOur new design introduced a mobile-first approach, simplified the user flow, and created a more intuitive interface with proper color contrast ratios and accessibility compliance.",
+        image: "/saas-old.png"
       }
     ],
     results: [
-      "User onboarding completion increased from 45% to 85%",
-      "Average time to first deal reduced from 3 weeks to 1.2 weeks", 
-      "95% of beta users rated the platform as 'easy to use' or 'very easy to use'",
-      "Customer support tickets decreased by 70% after launch"
+      "The StackSource platform is now fully responsive, and mobile use increased 170% after launch.",
+      "A new dynamic flow for quoting terms led to the highest number of unique terms quoted at StackSource in the quarter after its release, a 25% YoY increase.",
+      "92% of users said it's easier to quickly evaluate a deal post-launch."
     ]
   },
   {
@@ -111,7 +136,7 @@ const projects = [
     title: "Retirement services app",
     category: "UX Design",
     heroImages: [
-      { src: "/project3.png", alt: "Mobile retirement planning app interface" },
+      { src: "/rs-hero.png", alt: "Retirement services app dashboard" },
     ],
     keyResults: [
       "Reduced task completion time by 50%",
@@ -121,11 +146,11 @@ const projects = [
     sections: [
       {
         heading: "Role",
-        text: "UX Designer collaborating with product team and financial advisors"
+        text: "UX research and design"
       },
       {
         heading: "Objective",
-        text: "Design a mobile-first retirement planning app that simplifies complex financial decisions for users approaching retirement. The existing web-based tool was difficult to use on mobile devices and had low engagement rates."
+        text: "Because the necessary scope of the project was not well understood by the business stakeholders directing the requirements, I needed to support the team by visualizing the user flow to identify scope more accurately, and support the design process with user research and a wireframe prototype."
       },
       {
         heading: "User research",

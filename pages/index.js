@@ -12,9 +12,9 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <main className="max-w-5xl mx-auto px-6 sm:px-8 pt-10">
+      <main className="max-w-5xl mx-auto px-6 sm:px-8 pt-10 pb-8">
         <section className="pt-8 text-center">
-          <h1 className="text-[40px] sm:text-5xl font-semibold text-text-primary">Nicole Whitis-Purva</h1>
+          <h1 className="text-[40px] sm:text-5xl font-semibold text-text-primary mb-8">Nicole Whitis-Purva</h1>
           <div className="mt-4 text-logo font-semibold tracking-wide flex items-center justify-center flex-wrap gap-2">
             <span>UX</span>
             <span className="sq-bullet" aria-hidden="true"></span>
@@ -62,8 +62,8 @@ export default function HomePage() {
                     style={{ border: 'none', outline: 'none' }}
                   />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="bg-white bg-opacity-90 rounded-full p-2">
-                      <svg className="w-4 h-4 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="rounded-md p-2" style={{ backgroundColor: 'rgba(73, 43, 14, 0.85)' }}>
+                      <svg className="w-4 h-4 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>

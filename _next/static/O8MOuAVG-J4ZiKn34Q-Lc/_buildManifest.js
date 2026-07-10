@@ -1,25 +1,30 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "./static/chunks/6cbe77346e05a3af.js"
+    "./static/chunks/2b88ddc3c9c3b12c.js"
   ],
   "/_error": [
-    "./static/chunks/751aad032144f203.js"
+    "./static/chunks/88ec9c6fcd63b505.js"
   ],
   "/about": [
-    "./static/chunks/a78edf886ecc1844.js"
+    "./static/chunks/ee7d8293e5d7063b.js"
   ],
   "/pitch/[slug]": [
-    "./static/chunks/b183d4afd1a0d7b7.js"
+    "./static/chunks/0f65c6dce5f28fd5.js"
   ],
   "/projects/[slug]": [
-    "./static/chunks/0f6a985e4cd7c819.js"
+    "./static/chunks/5b6d16d4ac0b65dc.js"
   ],
   "/resume": [
-    "./static/chunks/a6a58d7064f71a19.js"
+    "./static/chunks/c747250fcfafedc2.js"
   ],
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/portfolio//_next/:path+",
+        "destination": "/portfolio/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [

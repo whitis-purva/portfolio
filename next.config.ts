@@ -1,12 +1,15 @@
 import type { NextConfig } from "next";
 
-// Production/GitHub Pages: /portfolio. Local `next dev`: no prefix.
-const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+// GitHub Pages needs /portfolio; Vercel and local use root (empty).
+const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGitHubPages ? "/portfolio" : "";
+const assetPrefix = isGitHubPages ? "/portfolio" : "";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "export",
   basePath,
+  assetPrefix,
   trailingSlash: true,
   images: {
     unoptimized: true,

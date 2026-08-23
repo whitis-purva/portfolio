@@ -1,0 +1,24 @@
+{
+  "slug": "loot-labs-boxed",
+  "company": "Loot Labs",
+  "team": "BOXED.GG",
+  "role": "Staff Product Manager",
+  "resumeUrl": "/WhitisPurvaResume2026-loot-labs.pdf",
+  "headline": "I design economies for collectors because I am one.",
+  "subheadline": "I’m a product strategist who spends my weekends in local game stores, collecting singles, and tracking secondary market velocity. When I saw how broken portfolio liquidity was for real collectors, I didn't write a slide deck, I started building mintwise.cc.",
+  "painPoints": [
+    {
+      "title": "Collector Psychology & Marketplace Friction",
+      "desc": "I know firsthand why collectors open boxes, chase foils, or dump slabs before market shifts. Most products treat cards as static commodities; BOXED.gg understands that dopamine, transparency, and liquidity drive the real loop. I bring deep domain intuition paired with the analytical rigor to keep game economies balanced and fair."
+    },
+    {
+      "title": "Systems Thinking From Strategy to Code",
+      "desc": "My sweet spot is turning complex transactional models into seamless user experiences. Whether whiteboarding complex financial pipelines at StackSource or mapping CSV ingestion and live market pricing data for Mintwise, I work directly alongside engineers to prototype quickly, test unit economics, and ship high-velocity MVPs."
+    }
+  ],
+  "mappedProjects": [
+    "mintwise-tcg-valuation",
+    "reporting-platform",
+    "case-study-improving-lender-engagement"
+  ]
+}

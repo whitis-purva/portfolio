@@ -1,0 +1,23 @@
+{
+    "slug": "medallion",
+    "company": "Medallion",
+    "team": "Product Design",
+    "role": "Senior Product Designer",
+    "headline": "Designing Legible AI-Driven Automation and Systems for Complex Healthcare Operations",
+    "subheadline": "I bring over 12 years of enterprise information architecture, cross-functional engineering collaboration, and hands-on health-tech venture experience to streamline provider workflows.",
+    "painPoints": [
+    {
+    "title": "Making Complex Automation and AI Legible",
+    "desc": "In my health-tech venture, I architected an NLP-driven interface that translates semantic input into structured data. I focus on designing complex workflows where automated routing, data extraction, and decision support feel transparent, context-aware, and entirely trustworthy to operational teams."
+    },
+    {
+    "title": "Bridging Design Intent with Engineering Fluency",
+    "desc": "I operate with an AI-first prototyping workflow using Cursor and Copilot to design data-heavy software at Allied Solutions. I love diving into system constraints, logical edge cases, and data exceptions alongside engineering teams to ensure our design vision ships cleanly to production."
+    }
+    ],
+    "mappedProjects": [
+    "reporting-platform",
+    "saas-product"
+    ],
+    "coverLetterText": "Dear Hiring Team,\n\nI have spent my career transforming dense, complex technical ecosystems into legible, trustworthy user experiences. When I read Medallion's mission to eliminate administrative bottlenecks in provider operations using automation and AI, it aligned perfectly with my current focus. As a Senior Product Designer and venture founder specializing in enterprise data-heavy workflows, I build scalable systems that mitigate cognitive load and convert high-volume operational complexity into intuitive digital products.\n\nCurrently, as the Founder of a Stealth Health-tech Venture, I direct end-to-end product execution, notably architecting an AI-driven interface that utilizes Natural Language Processing (NLP) to translate complex semantic input into structured data. This directly mirrors Medallion's objective of making automated actions, routing, and decision support clear and reliable for operational teams. Additionally, as a Senior UX Designer at Allied Solutions, I lead the design for data-dense reporting software. By pioneering an AI-first workflow utilizing tools like Cursor and Copilot, I cut down time-to-delivery while maintaining an elite standard of craft, ultimately driving our beta software to a perfect 5/5 SUPR-Q usability score.\n\nMedallion's emphasis on designers being 'builders, not just artifact makers' resonates deeply with my hands-on operational approach. Whether establishing foundational design systems and 3-year roadmaps as a UX Director at OneAmerica Financial or collaborating closely with engineering teams to reason through workflow logic, permissions, and system constraints, I ensure that design intent carries flawlessly into production. I bring a rare blend of deep information architecture expertise, modern AI-driven practices, and a strong business acumen that connects design choices directly to user adoption, efficiency, and retention.\n\nI am eager to bring my background in healthcare technology, complex data systems, and cross-functional leadership to the Head of Design and the broader team at Medallion. Thank you for your time and consideration. I look forward to discussing how my experience can help scale your provider operations platform.\n\nSincerely,\n\nNicole Whitis-Purva"
+    }

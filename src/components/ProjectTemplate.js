@@ -1,11 +1,16 @@
 import { useState } from "react";
+import Link from "next/link";
 import ImageModal from "./ImageModal";
+import ImpactAnalyticsDashboard from "./ImpactAnalyticsDashboard";
+import AssetImage from "./AssetImage";
+import { withBasePath } from "@/lib/assetPath";
 
 export default function ProjectTemplate({
   title,
   category,
   heroImages = [],
   keyResults = [],
+  metricHero = [],
   sections = [],
   results,
   previousProject,
@@ -55,17 +60,39 @@ export default function ProjectTemplate({
 
         {heroImages && heroImages.length > 0 && (
           <section className="mt-8">
-            {heroImages.map((img, idx) => (
-              <div key={idx} className="w-full overflow-hidden">
-                {/* Accept either next/image sources or static public paths */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={img.src} alt={img.alt || title} className="block w-full h-auto border-0 outline-none" style={{ border: 'none', outline: 'none' }} />
+            {heroImages.length === 3 ? (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {heroImages.map((img, idx) => (
+                  <div key={idx} className="w-full overflow-hidden">
+                    <AssetImage src={img.src} alt={img.alt || title} className="block w-full h-auto border-0 outline-none" style={{ border: 'none', outline: 'none' }} />
+                  </div>
+                ))}
               </div>
-            ))}
+            ) : (
+              heroImages.map((img, idx) => (
+                <div key={idx} className="w-full overflow-hidden">
+                  <AssetImage src={img.src} alt={img.alt || title} className="block w-full h-auto border-0 outline-none" style={{ border: 'none', outline: 'none' }} />
+                </div>
+              ))
+            )}
           </section>
         )}
 
-        {keyResults.length > 0 && (
+        {metricHero.length > 0 && (
+          <section className="mt-12 border-t border-rule pt-8" aria-label="Key metrics">
+            <div className="metric-hero-grid">
+              {metricHero.map((metric, idx) => (
+                <article key={idx} className="metric-hero-item">
+                  <p className={`metric-hero-value${metric.valueVariant ? ` metric-hero-value--${metric.valueVariant}` : ""}`}>{metric.value}</p>
+                  <h2 className="metric-hero-title">{metric.title}</h2>
+                  <p className="metric-hero-body" dangerouslySetInnerHTML={{ __html: metric.description }} />
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {metricHero.length === 0 && keyResults.length > 0 && (
           <section className="mt-12 border-t border-rule pt-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Key Results heading - left column */}
@@ -89,9 +116,6 @@ export default function ProjectTemplate({
         )}
 
             {(() => {
-              // Debug: Log the sections data
-              console.log('ProjectTemplate sections:', sections);
-              
               // Group Objective and Approach sections together for 2-column layout
               const sectionsToRender = [];
               let i = 0;
@@ -257,13 +281,36 @@ export default function ProjectTemplate({
                     
                     {/* Images - right column */}
                     <div className="lg:col-span-2">
+                      {/* Embedded video (e.g. Loom) */}
+                      {currentSection.embed && (
+                        <div
+                          className={`w-full overflow-hidden rounded-lg mb-6 ${currentSection.embedAspectRatio ? 'relative' : 'aspect-video'}`}
+                          style={currentSection.embedAspectRatio ? { paddingBottom: currentSection.embedAspectRatio } : undefined}
+                        >
+                          <iframe
+                            src={currentSection.embed}
+                            title={currentSection.embedTitle || currentSection.heading || title}
+                            allowFullScreen
+                            className={`border-0 ${currentSection.embedAspectRatio ? 'absolute top-0 left-0 w-full h-full' : 'w-full h-full'}`}
+                          />
+                        </div>
+                      )}
+
+                      {currentSection.embedPlaceholder && !currentSection.embed && (
+                        <div className="w-full aspect-video overflow-hidden rounded-lg bg-gray-200 flex items-center justify-center mb-6">
+                          <span className="text-text-secondary text-sm font-medium">{currentSection.embedPlaceholder}</span>
+                        </div>
+                      )}
+
+                      {currentSection.impactDashboard && <ImpactAnalyticsDashboard />}
+
                       {/* Individual section image */}
                       {currentSection.image && (
                         <div>
                           <div className="w-full overflow-hidden">
                             {currentSection.image.endsWith('.mov') || currentSection.image.endsWith('.mp4') || currentSection.image.endsWith('.webm') ? (
                               <video
-                                src={currentSection.image}
+                                src={withBasePath(currentSection.image)}
                                 controls
                                 className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
                                 style={{ border: 'none', outline: 'none' }}
@@ -275,8 +322,7 @@ export default function ProjectTemplate({
                                 Your browser does not support the video tag.
                               </video>
                             ) : (
-                              /* eslint-disable-next-line @next/next/no-img-element */
-                              <img 
+                              <AssetImage 
                                 src={currentSection.image} 
                                 alt={currentSection.caption || currentSection.heading || title} 
                                 className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
@@ -304,8 +350,7 @@ export default function ProjectTemplate({
                                 <div className="space-y-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img 
+                                      <AssetImage 
                                         src={img.src} 
                                         alt={img.alt || currentSection.heading || title} 
                                         className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
@@ -320,8 +365,7 @@ export default function ProjectTemplate({
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img 
+                                      <AssetImage 
                                         src={img.src} 
                                         alt={img.alt || currentSection.heading || title} 
                                         className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
@@ -331,13 +375,50 @@ export default function ProjectTemplate({
                                     </div>
                                   ))}
                                 </div>
+                              ) : currentSection.images.length === 2 && currentSection.heading === "Research & lender prioritization" ? (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx}>
+                                      <div className="w-full overflow-hidden">
+                                        <AssetImage
+                                          src={img.src}
+                                          alt={img.alt || currentSection.heading || title}
+                                          className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                          style={{ border: 'none', outline: 'none' }}
+                                          onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                        />
+                                      </div>
+                                      {img.caption && (
+                                        <p className="text-sm text-text-secondary mt-3 italic">{img.caption}</p>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 2 && currentSection.images.some((img) => img.caption) ? (
+                                <div className="space-y-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx}>
+                                      <div className="w-full overflow-hidden">
+                                        <AssetImage
+                                          src={img.src}
+                                          alt={img.alt || currentSection.heading || title}
+                                          className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                          style={{ border: 'none', outline: 'none' }}
+                                          onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                        />
+                                      </div>
+                                      {img.caption && (
+                                        <p className="text-sm text-text-secondary mt-3 italic">{img.caption}</p>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
                               ) : currentSection.images.length === 2 && currentSection.heading === "Design considerations" ? (
                                 // For 2 images in Design considerations section, display as individual full-width images stacked vertically
                                 <div className="space-y-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img 
+                                      <AssetImage 
                                         src={img.src} 
                                         alt={img.alt || currentSection.heading || title} 
                                         className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity" 
@@ -352,8 +433,21 @@ export default function ProjectTemplate({
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img
+                                      <AssetImage
+                                        src={img.src}
+                                        alt={img.alt || currentSection.heading || title}
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 2 && currentSection.heading === "Unified presence & newsletter optimization" ? (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      <AssetImage
                                         src={img.src}
                                         alt={img.alt || currentSection.heading || title}
                                         className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
@@ -368,8 +462,7 @@ export default function ProjectTemplate({
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img
+                                      <AssetImage
                                         src={img.src}
                                         alt={img.alt || currentSection.heading || title}
                                         className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
@@ -384,8 +477,21 @@ export default function ProjectTemplate({
                                 <div className="space-y-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className="w-full overflow-hidden">
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img
+                                      <AssetImage
+                                        src={img.src}
+                                        alt={img.alt || currentSection.heading || title}
+                                        className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
+                                        style={{ border: 'none', outline: 'none' }}
+                                        onClick={() => openModal(img.src, img.alt || currentSection.heading || title, currentSection.images)}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : currentSection.images.length === 1 ? (
+                                <div className="space-y-6">
+                                  {currentSection.images.map((img, idx) => (
+                                    <div key={idx} className="w-full overflow-hidden">
+                                      <AssetImage
                                         src={img.src}
                                         alt={img.alt || currentSection.heading || title}
                                         className="block w-full h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity"
@@ -400,8 +506,7 @@ export default function ProjectTemplate({
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                   {currentSection.images.map((img, idx) => (
                                     <div key={idx} className={`w-full overflow-hidden ${(currentSection.images.length === 5 && idx === 4) ? 'sm:col-span-2' : ''}`}>
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img
+                                      <AssetImage
                                         src={img.src}
                                         alt={img.alt || currentSection.heading || title}
                                         className={`block h-auto border-0 outline-none cursor-pointer hover:opacity-90 transition-opacity ${(currentSection.images.length === 5 && idx === 4) ? 'w-1/2' : 'w-full'}`}
@@ -532,7 +637,7 @@ export default function ProjectTemplate({
               {/* Previous Project */}
               <div className="flex-1">
                 {previousProject ? (
-                  <a 
+                  <Link
                     href={`/projects/${previousProject.slug}`}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-rule text-text-primary hover:bg-gold-muted transition-colors"
                   >
@@ -540,14 +645,14 @@ export default function ProjectTemplate({
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                     <span className="text-sm font-medium">{previousProject.title}</span>
-                  </a>
+                  </Link>
                 ) : null}
               </div>
 
               {/* Next Project */}
               <div className="flex-1 flex justify-end">
                 {nextProject ? (
-                  <a 
+                  <Link
                     href={`/projects/${nextProject.slug}`}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-rule text-text-primary hover:bg-gold-muted transition-colors"
                   >
@@ -555,7 +660,7 @@ export default function ProjectTemplate({
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </Link>
                 ) : null}
               </div>
             </div>

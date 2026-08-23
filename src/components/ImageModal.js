@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { withBasePath } from '@/lib/assetPath';
+import AssetImage from '@/components/AssetImage';
 
 export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt, allImages = [], currentIndex = 0, onNavigate }) {
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt, allIma
         <div className="flex justify-center">
           {imageSrc.endsWith('.mov') || imageSrc.endsWith('.mp4') || imageSrc.endsWith('.webm') ? (
             <video
-              src={`${imageSrc}?t=${Date.now()}`}
+              src={`${withBasePath(imageSrc)}?t=${Date.now()}`}
               controls
               className="max-w-full max-h-[70vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
@@ -53,7 +55,7 @@ export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt, allIma
               Your browser does not support the video tag.
             </video>
           ) : (
-            <img
+            <AssetImage
               src={imageSrc}
               alt={imageAlt}
               className="max-w-full object-contain rounded-lg"

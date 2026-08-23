@@ -1,3 +1,6 @@
+import Link from "next/link";
+import AssetImage from "@/components/AssetImage";
+
 export default function CaseStudyLayout({ title, intro, blocks = [], results, previousProject, nextProject }) {
   return (
     <main className="max-w-5xl mx-auto px-6 sm:px-8 py-10">
@@ -19,8 +22,7 @@ export default function CaseStudyLayout({ title, intro, blocks = [], results, pr
             <div className="mt-6 grid grid-cols-1 gap-6">
               {b.images.map((img, idx) => (
                 <div key={idx} className="w-full overflow-hidden rounded-xl">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img.src} alt={img.alt || b.heading || title} className="block w-full h-auto" />
+                  <AssetImage src={img.src} alt={img.alt || b.heading || title} className="block w-full h-auto" />
                 </div>
               ))}
             </div>
@@ -41,7 +43,7 @@ export default function CaseStudyLayout({ title, intro, blocks = [], results, pr
             {/* Previous Project */}
             <div className="flex-1">
               {previousProject ? (
-                <a 
+                <Link
                   href={`/projects/${previousProject.slug}`}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-rule text-text-primary hover:bg-gold-muted transition-colors"
                 >
@@ -49,14 +51,14 @@ export default function CaseStudyLayout({ title, intro, blocks = [], results, pr
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                   <span className="text-sm font-medium">{previousProject.title}</span>
-                </a>
+                </Link>
               ) : null}
             </div>
 
             {/* Next Project */}
             <div className="flex-1 flex justify-end">
               {nextProject ? (
-                <a 
+                <Link
                   href={`/projects/${nextProject.slug}`}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-rule text-text-primary hover:bg-gold-muted transition-colors"
                 >
@@ -64,7 +66,7 @@ export default function CaseStudyLayout({ title, intro, blocks = [], results, pr
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               ) : null}
             </div>
           </div>
@@ -73,5 +75,3 @@ export default function CaseStudyLayout({ title, intro, blocks = [], results, pr
     </main>
   );
 }
-
-

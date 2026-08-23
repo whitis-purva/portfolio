@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import AssetImage from "@/components/AssetImage";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,9 +8,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-20 bg-background/95 backdrop-blur border-b border-rule">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <img src="/nwp-logo.svg" alt="NWP" className="h-8 w-auto" />
-        </div>
+        <Link href="/" aria-label="work" className="flex items-center">
+          <AssetImage src="/nwp-logo.svg" alt="NWP" className="h-8 w-auto" />
+        </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-3 lg:gap-4 font-[500] text-text-primary">

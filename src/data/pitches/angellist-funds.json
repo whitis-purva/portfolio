@@ -1,0 +1,19 @@
+{
+    "slug": "angellist-funds",
+    "company": "Angellist",
+    "team": "Funds",
+    "role": "Product Designer, Funds",
+    "headline": "I turn financial complexity into clear, configurable product—without losing the power.",
+    "subheadline": "For the Funds team building AI-driven institutional tooling: I design the high-stakes systems where strategy, architecture, and craft have to move together.",
+    "painPoints": [
+      {
+        "title": "You need a designer who can navigate complex system architecture",
+        "desc": "I've spent 7+ years designing enterprise and financial products—accounting-adjacent workflows, institutional data, and UX that stays precise under pressure."
+      },
+      {
+        "title": "You need someone who can rethink back-office operations with AI",
+        "desc": "I'm at my best when the brief is to simplify high-stakes work without stripping capability—exactly the challenge of integrating AI agents into configurable services."
+      }
+    ],
+    "mappedProjects": ["reporting-platform", "saas-product"]
+  }

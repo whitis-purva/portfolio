@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AssetImage from "@/components/AssetImage";
 
 export default function AboutPage() {
   return (
@@ -59,24 +60,24 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Top Row */}
             <div className="aspect-square overflow-hidden rounded-xl">
-              <img src="/art-1.png" alt="Artwork 1" className="w-full h-full object-cover" />
+              <AssetImage src="/art-1.png" alt="Artwork 1" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square overflow-hidden rounded-xl">
-              <img src="/art-2.png" alt="Artwork 2" className="w-full h-full object-cover" />
+              <AssetImage src="/art-2.png" alt="Artwork 2" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square overflow-hidden rounded-xl">
-              <img src="/art-3.png" alt="Artwork 3" className="w-full h-full object-cover" />
+              <AssetImage src="/art-3.png" alt="Artwork 3" className="w-full h-full object-cover" />
             </div>
             
             {/* Bottom Row */}
             <div className="aspect-square overflow-hidden rounded-xl">
-              <img src="/art-4.png" alt="Artwork 4" className="w-full h-full object-cover" />
+              <AssetImage src="/art-4.png" alt="Artwork 4" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square overflow-hidden rounded-xl">
-              <img src="/art-5.png" alt="Artwork 5" className="w-full h-full object-cover" />
+              <AssetImage src="/art-5.png" alt="Artwork 5" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square overflow-hidden rounded-xl">
-              <img src="/art-6.png" alt="Artwork 6" className="w-full h-full object-cover" />
+              <AssetImage src="/art-6.png" alt="Artwork 6" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AssetImage from "@/components/AssetImage";
 
 export default function HomePage() {
   return (
@@ -34,12 +35,12 @@ export default function HomePage() {
 
         <section className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { id: 1, slug: "reporting-platform", title: "Reporting platform for lenders", subtitle: "UX Design", img: "/project1.png" },
-            { id: 2, slug: "saas-product", title: "SaaS product for CRE financing", subtitle: "UX Design", img: "/project2.png" },
-            { id: 3, slug: "retirement-services-app", title: "Retirement services app", subtitle: "UX Design", img: "/project3.png" },
-            { id: 4, slug: "case-study-improving-lender-engagement", title: "Improving lender engagement", subtitle: "Case Study", img: "/project4.png", caseStudy: true },
-            { id: 5, slug: "brand-and-website-refresh", title: "Brand & website refresh", subtitle: "Design & Leadership", img: "/project5.png" },
-            { id: 6, slug: "design-system", title: "Design system", subtitle: "Design & Leadership", img: "/project6.png" },
+            { id: 1, slug: "reporting-platform", title: "Reporting platform for lenders", subtitle: "Data Visualization & Dashboards", img: "/project1.png" },
+            { id: 2, slug: "saas-product", title: "SaaS product for CRE financing", subtitle: "Responsive Web Applications", img: "/project2.png" },
+            { id: 3, slug: "retirement-services-app", title: "Retirement services app", subtitle: "Mobile Product Design", img: "/project3.png" },
+            { id: 4, slug: "case-study-improving-lender-engagement", title: "Improving lender engagement", subtitle: "User Acquisition Flows", img: "/project4.png", caseStudy: true },
+            { id: 5, slug: "brand-and-website-refresh", title: "Brand & website refresh", subtitle: "Design System Engineering", img: "/project5.png" },
+            { id: 6, slug: "digital-transformation-omni-channel-engagement", title: "Omnichannel strategy", subtitle: "Executive Design Leadership", img: "/project6.png" },
           ].map((p) => {
             const hoverColors = [
               'hover:bg-gold-muted/40',     // Project 1 - gold
@@ -54,10 +55,10 @@ export default function HomePage() {
             <Link key={p.id} href={p.caseStudy ? `/projects/${p.slug}` : `/projects/${p.slug}`} className="group block">
               <article className={`transition-all duration-200 hover:scale-[1.02] cursor-pointer p-2 rounded-xl ${hoverColors[p.id - 1]}`}>
                 <div className="w-full h-48 bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden relative group project-card">
-                  <img 
-                    src={p.img} 
-                    alt={p.title} 
-                    className="w-full h-full object-cover border-0 outline-none" 
+                  <AssetImage
+                    src={p.img}
+                    alt={p.title}
+                    className="w-full h-full object-cover border-0 outline-none"
                     style={{ border: 'none', outline: 'none' }}
                   />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">

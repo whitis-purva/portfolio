@@ -32,9 +32,6 @@ export async function getStaticProps({ params }) {
   const allSlugs = getAllProjectSlugs();
   const currentIndex = allSlugs.indexOf(params.slug);
   
-  console.log('getStaticProps for slug:', params.slug);
-  console.log('getStaticProps project sections:', JSON.stringify(project?.sections || [], null, 2));
-  
   const previousProject = currentIndex > 0 ? getProjectBySlug(allSlugs[currentIndex - 1]) : null;
   const nextProject = currentIndex < allSlugs.length - 1 ? getProjectBySlug(allSlugs[currentIndex + 1]) : null;
   

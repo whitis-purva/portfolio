@@ -6,10 +6,22 @@ const projects = [
     heroImages: [
       { src: "/reporting-platform.png", alt: "LendingInsights reporting platform dashboard showing all products, participation and penetration metrics, and product-specific data" },
     ],
-    keyResults: [
-      "Achieved perfect 5/5 SUPR-Q score from beta clients",
-      "Replaced legacy software saving $65K annually",
-      "Enabled daily access to coaching and training insights"
+    metricHero: [
+      {
+        value: "5/5",
+        title: "SUPR-Q Score",
+        description: "Achieved a perfect usability and satisfaction score from beta clients after six weeks of intensive platform testing.",
+      },
+      {
+        value: "$65K",
+        title: "Annual Cost Savings",
+        description: "Engineered a modern native solution to completely replace legacy software, eliminating recurring enterprise licensing overhead.",
+      },
+      {
+        value: "100%",
+        title: "On-Demand Insights",
+        description: "Replaced a manual spreadsheet stop-gap with dynamic data architectures that unlock daily access to performance coaching and training insights.",
+      },
     ],
     sections: [
       {
@@ -53,8 +65,10 @@ const projects = [
     results: [
       "Sales team feedback:\n\"I see all of our accounts growing as a result of this.\"\n\"Love it... that's exactly what we would need.\"",
       "Client feedback:\n\"I would love to have this at my fingertips every day, and we would use this every single day.\"\n\"It truly would be my one-stop shop to see what my coaching and training needs are.\"",
-      "After 6 weeks of beta testing, our clients gave the platform a perfect 5/5 SUPR-Q score, demonstrating exceptional user satisfaction and usability.",
-      "Our new reporting platform will also save the business $65K annually by replacing the need for licensing the legacy software they previously used."
+      "After 6 weeks of beta testing, our clients gave the platform a <strong class=\"font-semibold text-text-primary\">perfect 5/5 SUPR-Q score</strong>, demonstrating exceptional user satisfaction, task completion efficiency, and overall usability.",
+      "Our new reporting platform will <strong class=\"font-semibold text-text-primary\">save the business $65K annually</strong> by replacing the critical operational need for legacy software licensing.",
+      "By transitioning from product-siloed data models to an architecture structured around organizational tiers, we successfully <strong class=\"font-semibold text-text-primary\">unlocked daily, actionable coaching and training insights</strong> for team leads.",
+      "The resulting interface <strong class=\"font-semibold text-text-primary\">replaced a highly fragmented manual stop-gap process</strong> of disjointed spreadsheets and pivot tables with a centralized, dynamic enterprise dashboard.",
     ]
   },
   {
@@ -64,10 +78,22 @@ const projects = [
     heroImages: [
       { src: "/saas-product-hero.png", alt: "Commercial real estate financing platform dashboard" },
     ],
-    keyResults: [
-      "Mobile use increased 170% after making the platform fully responsive",
-      "25% YoY increase in unique terms quoted with new dynamic flow",
-      "92% of users said it's easier to quickly evaluate a deal post-launch"
+    metricHero: [
+      {
+        value: "+170%",
+        title: "Mobile Adoption",
+        description: "Drove a surge in mobile engagement after engineering a fully responsive, mobile-first platform architecture to replace a legacy non-responsive experience.",
+      },
+      {
+        value: "25%",
+        title: "YoY Quote Growth",
+        description: "A new dynamic quoting flow delivered the highest volume of unique terms quoted in a single quarter, accelerating year-over-year deal velocity.",
+      },
+      {
+        value: "92%",
+        title: "Deal Evaluation Ease",
+        description: "Post-launch research confirmed the redesigned interface materially simplified how users assess and evaluate commercial financing opportunities.",
+      },
     ],
     sections: [
       {
@@ -83,7 +109,6 @@ const projects = [
         text: "I planned and executed a moderated study that combined user interviews and a task-based preference test. I wanted to understand the day-to-day challenges and needs of each of our external audiences, as well as establish baseline data to support design decisions.\n\nOne surprising finding was discovering a pattern of feedback on the prominence of the StackSource brand identity in the platform. I learned through industry research that status and reputation are important in the commercial real estate industry, which supported this feedback.",
         images: [
           { src: "/saas-research-1.png", alt: "Research findings 1" },
-          { src: "/saas-research-2.png", alt: "Research findings 2" },
           { src: "/saas-research-3.png", alt: "Research findings 3" },
           { src: "/saas-research-4.png", alt: "Research findings 4" },
           { src: "/saas-research-5.png", alt: "Research findings 5" }
@@ -94,7 +119,6 @@ const projects = [
         heading: "Lean personas",
         text: "Using our study findings combined with knowledge and insights from our internal subject matter experts, we created a set of lean personas for our core user base and target segments.",
         images: [
-          { src: "/saas-persona-1.png", alt: "Persona 1" },
           { src: "/saas-persona-2.png", alt: "Persona 2" },
           { src: "/saas-persona-3.png", alt: "Persona 3" }
         ],
@@ -126,9 +150,10 @@ const projects = [
       }
     ],
     results: [
-      "The StackSource platform is now fully responsive, and mobile use increased 170% after launch.",
-      "A new dynamic flow for quoting terms led to the highest number of unique terms quoted at StackSource in the quarter after its release, a 25% YoY increase.",
-      "92% of users said it's easier to quickly evaluate a deal post-launch."
+      "The StackSource platform is now fully responsive, and <strong class=\"font-semibold text-text-primary\">mobile use increased 170% after launch</strong>.",
+      "A new dynamic flow for quoting terms led to the <strong class=\"font-semibold text-text-primary\">highest number of unique terms quoted</strong> at StackSource in the quarter after its release, a <strong class=\"font-semibold text-text-primary\">25% YoY increase</strong>.",
+      "<strong class=\"font-semibold text-text-primary\">92% of users said it's easier to quickly evaluate a deal</strong> post-launch.",
+      "The transformation introduced a <strong class=\"font-semibold text-text-primary\">mobile-first architecture and accessibility-compliant design system</strong> that replaced a legacy experience with poor hierarchy, non-responsive layouts, and inadequate color contrast.",
     ]
   },
   {
@@ -138,10 +163,23 @@ const projects = [
     heroImages: [
       { src: "/rs-hero.png", alt: "Retirement services app dashboard" },
     ],
-    keyResults: [
-      "Enabled accurate cost estimates for offshore development team",
-      "Improved time to delivery through better scope identification",
-      "Achieved 4.7 rating in iOS app store through continuous user testing"
+    metricHero: [
+      {
+        value: "4.7",
+        title: "App Store Rating",
+        description: "The app earned a <strong class=\"font-semibold text-text-primary\">4.7 App Store rating on iOS</strong>, built on unmoderated user testing I led across the wireframe and prototype lifecycle before handoff.",
+      },
+      {
+        value: "Research-led",
+        title: "Prototype Validation",
+        valueVariant: "label",
+        description: "Secured stakeholder buy-in for unmoderated testing through UserTesting.com, validating wireframes and prototypes throughout the design lifecycle before handoff.",
+      },
+      {
+        value: "100%",
+        title: "Scope Alignment",
+        description: "Full-flow visualization resolved requirements gaps that had blocked accurate cost estimation, directly accelerating delivery timelines with the offshore team.",
+      },
     ],
     sections: [
       {
@@ -189,75 +227,86 @@ const projects = [
       }
     ],
     results: [
-      "My work, which included identifying additional necessary screens (ex. change password flow), enabled the offshore development team to provide an accurate cost estimate, improving our time to delivery.",
-      "My approach to continuous user testing also helped ensure we were shipping the best product possible, resulting in a 4.7 rating in the iOS app store."
+      "My work, which included identifying <strong class=\"font-semibold text-text-primary\">additional necessary screens</strong> (such as the change password flow), enabled the offshore development team to provide <strong class=\"font-semibold text-text-primary\">accurate cost estimates</strong>, directly <strong class=\"font-semibold text-text-primary\">improving time to delivery</strong>.",
+      "Documenting comprehensive <strong class=\"font-semibold text-text-primary\">user flows in partnership with IT architecture</strong> resolved a critical blocker where minimum business requirements failed to reflect the actual screens required for development.",
+      "A documented research plan secured stakeholder buy-in for <strong class=\"font-semibold text-text-primary\">unmoderated testing through UserTesting.com</strong>, allowing the team to validate design decisions quickly alongside active development.",
+      "Unmoderated testing throughout wireframes and prototype helped ensure launch quality—the app earned a <strong class=\"font-semibold text-text-primary\">4.7 rating on iOS</strong> after release.",
     ]
   },
   {
     slug: "case-study-improving-lender-engagement",
     title: "Improving lender engagement",
-    category: "Case Study",
-    heroImages: null,
-    keyResults: [
-      "Achieved highest number of unique quotes to date after launch",
-      "Increased mobile user adoption with responsive design",
-      "Surpassed $1 billion in closed deals through improved platform"
+    category: "User Acquisition Flows",
+    heroImages: [
+      { src: "/lender-engagement-hero.png", alt: "StackSource lender quoting and deal evaluation experience" },
+    ],
+    metricHero: [
+      {
+        value: "+25%",
+        title: "Unique Terms Quoted",
+        valueVariant: "compact",
+        description: "Delivered the highest number of unique quotes to date—a <strong class=\"font-semibold text-text-primary\">25% year-over-year increase</strong>—after shipping the redesigned lender quoting flow.",
+      },
+      {
+        value: "$1B+",
+        title: "Closed Deals",
+        valueVariant: "compact",
+        description: "Lender-first UX improvements helped StackSource <strong class=\"font-semibold text-text-primary\">surpass $1 billion</strong> in closed commercial real estate financing, tying product engagement directly to revenue scale.",
+      },
+      {
+        value: "−11%",
+        title: "Faster Conversions",
+        valueVariant: "compact",
+        description: "Cut median time to convert <strong class=\"font-semibold text-text-primary\">by 11%, down to 2m 57s</strong>, and lifted funnel conversion to <strong class=\"font-semibold text-text-primary\">72.73%</strong>, removing friction from the legacy quoting experience.",
+      },
     ],
     sections: [
       {
-        heading: "Day one",
-        text: "On my first day at StackSource, I interviewed Tim, our CEO, about StackSource's purpose and business goals. While talking about business priorities, he said one thing that particularly struck me: 'We want to be the easiest way to get a commercial loan.'\n\nCommercial real estate brokering can be pretty complex. A majority of deals have unique factors that prevent them from fitting neatly into a pre-defined structure.\n\nMy job was to take this complex process, make it faster and easier for our users with innovative technology, and add business value that ultimately resulted in StackSource surpassing $1 billion in closed deals.",
-        image: "/le-1.png"
+        heading: "Role",
+        text: "UX strategy, research, and product design",
       },
       {
-        heading: "Understand the product and users",
-        text: "I spent the next few weeks learning how the platform works, and understanding Tim's vision. I facilitated whiteboarding sessions with our team to map out key processes in commercial real estate brokering. And I planned and executed an interview-style qualitative study with our external users, borrowers and lenders, to understand their work and needs in the platform.",
-        image: "/le-2.png"
+        heading: "Objective",
+        text: "StackSource's goal was to become the easiest way to get a commercial loan—but commercial real estate brokering is complex, and most deals have unique factors that resist a one-size-fits-all structure. My mandate was to make that process faster and easier through innovative technology, with lender engagement as the critical conversion lever: the platform cannot close deals without quoted terms from lenders.\n\nWhere my broader platform redesign work modernized StackSource end-to-end, this initiative focused specifically on the lender quoting workflow—the step where deals convert or stall.",
       },
       {
-        heading: "Building lean personas",
-        text: "Wrapping up my initial research phase with lean personas, I considered all the data I gathered and realized that prioritizing our lender experience was the right approach. StackSource can't close deals without quoted terms from lenders.",
-        image: "/le-3.png"
-      },
-      {
-        heading: "Design considerations",
-        text: "I began designing screens, soliciting feedback, and iterating. While the design has other feature enhancements based on feedback, I focused on key user feedback themes of hierarchy, scannable data, and responsive design. StackSource is now the only responsive CRE financing platform amongst our closest competitors.",
+        heading: "Research & lender prioritization",
+        text: "I spent my first weeks learning the platform, facilitating whiteboarding sessions to map key CRE brokering processes, and executing qualitative interviews with external borrowers and lenders. Synthesizing findings into lean personas made the priority clear: lender experience had to come first.\n\nEvery subsequent design decision was weighted toward reducing friction in how lenders understand deals and respond with terms.",
         images: [
-          { src: "/le-4.png", alt: "Design considerations" },
-          { src: "/le-5.png", alt: "Design considerations" }
-        ]
+          { src: "/le-2.png", alt: "Product exploration and user research synthesis", caption: "Mapping key CRE brokering processes through platform exploration and qualitative research" },
+          { src: "/saas-persona-1.png", alt: "Lean lender persona", caption: "Lean lender persona developed to guide prioritization of the quoting redesign" },
+        ],
       },
       {
-        heading: "Quoting terms and conversions",
-        text: "Now that lenders more easily understand our deals, they may be more likely to quote. But quoting terms on the old platform required using a lengthy, clunky form that didn't provide a great experience. I believed we had an opportunity to make quoting terms faster and easier. I conducted several whiteboarding sessions with my team to understand the specific calculations and permutations in this complex process.",
-        image: "/le-6.png"
+        heading: "Quoting engine redesign",
+        text: "I began designing screens around consistent feedback themes: clearer hierarchy, more scannable data, and full mobile responsiveness. StackSource became the only responsive CRE financing platform among our closest competitors.\n\nQuoting terms on the legacy platform required a lengthy, clunky form. I led whiteboarding sessions with engineering and product to map the calculations and permutations in this complex process, then redesigned the flow to make quoting faster, easier, and less error-prone.",
+        images: [
+          { src: "/le-4.png", alt: "Whiteboarding sessions mapping the Non-binding Offer Sheet quoting flow" },
+        ],
+        caption: "Whiteboarding sessions with engineering and product to map loan calculations, field logic, and quoting permutations before redesigning the flow.",
       },
       {
         heading: "Screen design & prototyping",
-        text: "I conducted prototype testing with several design iterations. A strategy that helped me finalize the design was to recruit users that were internally known to be less savvy, and therefore more likely to introduce errors. Here's a bird's eye view of the screens involved in this process.",
-        image: "/le-7.png"
+        text: "I conducted prototype testing across multiple design iterations. A key strategy was recruiting internally identified less-savvy users—more likely to surface edge cases and input errors—so the final experience would hold up under real-world lender behavior.",
+        image: "/le-7.png",
+        caption: "Four mobile screens from the responsive quoting experience—loan sizing, interest rate terms, deal overview, and pro forma summary.",
       },
       {
-        heading: "Final product",
-        text: "Watch a lender quote terms in about 2 minutes using the new experience in the video.",
-        image: "/le-8.mov"
+        heading: "Final product & launch",
+        text: "The new quoting experience allows lenders to quote terms in about two minutes. After launch, I continued soliciting feedback and reviewing user sessions to identify opportunities for further improvement.",
+        image: "/le-8.mov",
+        caption: "Lender quotes terms in under three minutes using the redesigned Non-binding Offer Sheet flow",
       },
       {
-        heading: "Launch and beyond",
-        text: "After launch, I continued to solicit feedback and watch user sessions to find opportunities for further improvement.",
-        image: "/le-9.png"
+        heading: "Business impact",
+        text: "Post-launch metrics and verified user feedback confirmed the redesigned quoting experience accelerated platform conversion and lender satisfaction.",
+        impactDashboard: true,
       },
-      {
-        heading: "Impact",
-        text: "The speed at which conversions are happening continues to decrease, and we saw our highest number of unique quotes to date after launch. We have increasing numbers of mobile users now that we've provided a responsive experience. And we know that deal evaluation is faster and easier because our users are telling us.",
-        image: "/le-10.png"
-      },
-      {
-        heading: "Result: $1 billion closed",
-        text: "We gave our users a quick and easy experience with an innovative platform design that has an unprecedented quoting engine and is fully responsive. And our business results prove the impact.",
-        image: "/le-11.png"
-      }
-        ]
+    ],
+    results: [
+      "The redesigned quoting flow reduced friction where lenders return terms, with post-launch gains in conversion speed, funnel completion, and reported ease of deal evaluation.",
+      "A fully responsive quoting experience increased mobile lender engagement and differentiated StackSource from competitors still running desktop-only workflows.",
+    ],
   },
   {
     slug: "brand-and-website-refresh",
@@ -266,10 +315,25 @@ const projects = [
     heroImages: [
       { src: "/brand-hero.png", alt: "Refreshed brand identity and website design" },
     ],
-    keyResults: [
-      "Improved NPS score from -36 to 55 (64% promoters)",
-      "Enhanced brand positioning for debt and equity deals",
-      "Launched refreshed website with improved usability and brand alignment"
+    metricHero: [
+      {
+        value: "−36 → 55",
+        title: "Sales Team NPS",
+        valueVariant: "compact",
+        description: "Post-launch satisfaction measured on an NPS-style scale swung from a detractor-heavy baseline to strong internal advocacy for the refreshed brand and website.",
+      },
+      {
+        value: "45% → 64%",
+        title: "Promoters",
+        valueVariant: "compact",
+        description: "Flipped sales team sentiment—replacing nearly half of detractors at baseline with a clear majority of promoters endorsing the new experience.",
+      },
+      {
+        value: "Debt + Equity",
+        title: "Brand Positioning",
+        valueVariant: "label",
+        description: "Tightened messaging and visual design surfaced full-service CRE capabilities, differentiating StackSource beyond senior-debt-only perception in legacy materials.",
+      },
     ],
     sections: [
       {
@@ -325,51 +389,86 @@ const projects = [
           { src: "/brand-results-2.png", alt: "Brand positioning success metrics" }
         ]
       }
+    ],
+    results: [
+      "The refreshed StackSource website reflects <strong class=\"font-semibold text-text-primary\">tightened messaging around value proposition</strong> and <strong class=\"font-semibold text-text-primary\">aligned visual design</strong> across marketing and product touchpoints.",
+      "Sales team satisfaction measured on an NPS-style scale <strong class=\"font-semibold text-text-primary\">jumped from -36 (45% detractors) to 55 (64% promoters)</strong> against the previous site as baseline.",
+      "The new brand positioning successfully <strong class=\"font-semibold text-text-primary\">differentiated StackSource as a modern, tech-focused startup</strong> while maintaining approachability in the traditional commercial real estate industry.",
+      "Research, competitive analysis, and <strong class=\"font-semibold text-text-primary\">brand advisory board input</strong> validated messaging that surfaces <strong class=\"font-semibold text-text-primary\">debt and equity capabilities</strong> as a core market differentiator previously underrepresented in legacy materials.",
     ]
   },
   {
-    slug: "design-system",
-    title: "Design system",
+    slug: "digital-transformation-omni-channel-engagement",
+    title: "Omnichannel strategy",
     category: "Design & Leadership",
-    heroImages: null,
-    keyResults: [
-      "Created solid foundation for consistent product enhancements",
-      "Simplified design specs access for development teams",
-      "Reduced meeting time and improved clarity"
+    heroImages: [
+      { src: "/omnichannel-hero.png", alt: "Omnichannel brand presence across website, mobile, Instagram, newsletter, and interactive dashboard for IHC Sisterhood" },
+    ],
+    metricHero: [
+      {
+        value: "+200%",
+        title: "Conversion Efficiency",
+        description: "<strong class=\"font-semibold text-text-primary\">Tripled</strong> direct user action velocity <strong class=\"font-semibold text-text-primary\">(from 3% to 9%)</strong> by decoupling high-priority registration funnels from general newsletter noise.",
+      },
+      {
+        value: "64.96%",
+        title: "Platform Scroll Depth",
+        description: "Post-launch telemetry via Microsoft Clarity validated deep content stickiness and an intuitive navigation architecture, averaging a <strong class=\"font-semibold text-text-primary\">2.4-minute session duration</strong>.",
+      },
+      {
+        value: "+146%",
+        title: "Organic Visibility",
+        description: "Accelerated top-of-funnel audience acquisition, scaling unique Facebook viewers by <strong class=\"font-semibold text-text-primary\">75% within 2 months</strong> of ecosystem launch.",
+      },
     ],
     sections: [
       {
         heading: "Role",
-        text: "Project lead"
+        text: "UX strategy, brand modernization, cross-functional leadership, and product design",
       },
       {
         heading: "Objective",
-        text: "The StackSource core product required segmented views with different functionality for three distinct audiences. A design system was needed to ensure consistency and facilitate efficiency in designing for this complex product."
+        text: "The legacy digital presence of the Temple Sisterhood of Indianapolis Hebrew Congregation was functionally fragmented and architecturally constrained, creating significant creative and operational silos. I stepped in to lead a comprehensive omnichannel strategy—modernizing the visual identity, migrating to an agile web infrastructure, and unifying cross-channel communications—to eliminate administrative workflow bottlenecks and establish an ecosystem that models modern digital design maturity.",
       },
       {
-        heading: "Design system",
-        text: [
-          "We built the design system as a part of our transition to Figma. We created a style library and also built components within Figma to make future product enhancement design more efficient.",
-          {
-            heading: "Token foundation",
-            content: "Established a robust token system covering colors, typography, spacing, and elevation. Created semantic naming conventions for consistent design implementation across the product."
-          },
-          {
-            heading: "Component library", 
-            content: "Built 50+ reusable components with comprehensive variants and states. Each component includes detailed documentation and usage guidelines for the design team."
-          }
-        ],
+        heading: "Brand refinement & alignment",
+        text: "Great design respects a brand's history while expanding its utility. I audited the legacy visual identity to solve inconsistencies in digital legibility, fine-tuning the logo's geometric proportions and expanding the color palette with accessible tints and shades. I presented a business case demonstrating these improvements to the organization's president, securing full buy-in to roll out updated assets to the board.",
         images: [
-          { src: "/ds-1.png", alt: "Design system components" },
-          { src: "/ds-2.png", alt: "Figma style library" },
-          { src: "/ds-3.png", alt: "Component specifications" }
-        ]
-      }
+          { src: "/omni-brand-proportions-1.png", alt: "Refined brand proportions", caption: "Refined logo proportions and expanded color palette for digital use" },
+          { src: "/omni-brand-proportions-2.png", alt: "Previous brand assets", caption: "Legacy brand assets with inconsistent application and limited web legibility" },
+        ],
+      },
+      {
+        heading: "A centralized digital hub",
+        text: "I migrated the ecosystem from WordPress to Webflow to secure the structural agility needed for rapid content iteration while maintaining domain continuity.\n\nTo eliminate critical drop-offs where users abandoned registration before paying, I consolidated the flow into a single-page interface with integrated Stripe processing.\n\nI also engineered automated backend spreadsheet syncing for instant data reconciliation, built a secure board portal for internal operational resources, and elevated the gift shop's prominence to directly reduce inbound administration phone calls.",
+        image: "/omni-website-homepage.png",
+      },
+      {
+        heading: "Unified presence & newsletter optimization",
+        text: "Continuous engagement requires a consistent, systemized voice. I established a modernized social presence utilizing custom component templates that translate our refined brand geometry directly to digital content.\n\nI also overhauled our communication infrastructure by moving the monthly newsletter from text-heavy emails to high-level summaries that drive traffic to tracking-enabled Webflow landing pages. This architectural pivot provides robust analytics via Google Analytics and Clarity while building a clean, public archive.",
+        images: [
+          { src: "/omni-instagram-grid.png", alt: "Instagram grid showing IHC Sisterhood brand templates" },
+          { src: "/omni-meta-analytics.png", alt: "Meta analytics snapshot showing engagement growth" },
+        ],
+      },
+      {
+        heading: "Interactive reporting dashboard",
+        text: "No one asked for a dashboard, but I saw an opportunity to visualize our engagement survey data in a meaningful way. Building this interactive interface directly demonstrates our commitment to analyzing and actually using community feedback, while building transparency and trust. The dashboard segments data by age cohorts, eliminating anecdotal guesswork and giving the board a clear, data-driven roadmap for future programming.",
+        embed: "https://www.loom.com/embed/278bc43b4f624166902a3f4f607bc184",
+        embedTitle: "Interactive reporting dashboard walkthrough",
+        embedAspectRatio: "56.25%",
+      },
     ],
     results: [
-      "StackSource now has a solid foundation for <b>consistent product enhancements</b> executed by a growing design team.",
-      "Development teams have <b>simplified access to design specs</b>, reducing meeting time and improving clarity."
-    ]
+      "The fully responsive and centralized platform drove a <strong class=\"font-semibold text-text-primary\">146% increase in Facebook views</strong> and a <strong class=\"font-semibold text-text-primary\">75% increase in unique viewers</strong> within two months of launch.",
+      "Moving the newsletter to a web-based CMS enables robust <strong class=\"font-semibold text-text-primary\">Google Analytics and Microsoft Clarity tracking</strong>, creating automated data loops for future content strategy.",
+      "Consolidating separate form and payment steps into a unified interface <strong class=\"font-semibold text-text-primary\">eliminated drop-offs and cut down administrative workflows</strong> caused by incomplete registrations.",
+      "Isolating high-priority membership campaigns out of the newsletter noise <strong class=\"font-semibold text-text-primary\">tripled user action velocity per email open from 3% to 9%</strong>, effectively engineering out choice paralysis and maximizing operational conversion efficiency.",
+      "Captured a <strong class=\"font-semibold text-text-primary\">64.96% average scroll depth</strong> and <strong class=\"font-semibold text-text-primary\">2.4-minute session duration</strong> via real-time Microsoft Clarity tracking, validating that the new information architecture successfully engages users downstream.",
+      "Automated backend data streams and a secure internal board portal <strong class=\"font-semibold text-text-primary\">dramatically streamlined daily administrative overhead</strong> for the leadership team.",
+      "The interactive demographic dashboard provides <strong class=\"font-semibold text-text-primary\">clear, measurable guardrails that eliminate anecdotal planning</strong>, allowing the board to target and validate event programming through 2026 and 2027.",
+      "Visualizing the survey data modeled <strong class=\"font-semibold text-text-primary\">digital design maturity for leadership</strong>, building deeper organizational transparency, trust, and a true commitment to analyzing community feedback.",
+    ],
   },
 ];
 

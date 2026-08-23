@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { withBasePath } from "@/lib/assetPath";
 
 export default function ResumePage() {
   return (
@@ -15,7 +16,7 @@ export default function ResumePage() {
           <div className="flex items-center justify-between mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-8">Résumé</h1>
             <a 
-              href="/WhitisPurvaResume2025-9-24.pdf" 
+              href={withBasePath("/WhitisPurvaResume2026-2.pdf")}
               target="_blank" 
               rel="noopener noreferrer"
               className="px-4 py-2 border border-rule rounded-md text-text-primary hover:bg-gold-muted transition-colors"
@@ -32,7 +33,7 @@ export default function ResumePage() {
                 </div>
                 <div className="lg:col-span-7">
                   <p className="text-lg text-text-primary leading-relaxed">
-                    I&apos;m passionate about creating products and experiences that are valuable and equitable. An experienced practitioner and leader, I have executed work and built engaged, cross-functional teams in startup-to-enterprise environments. I believe that nurturing relationships — with team members, stakeholders, and users — is essential to delivering great design.
+                    I help teams solve complex problems by connecting business strategy with user empathy. With a hands-on and curious approach, I turn insights into impactful, evidence-based solutions that create demonstrated value. An experienced practitioner and leader, I have executed work and built engaged, cross-functional teams in startup-to-enterprise environments.
                   </p>
                 </div>
               </div>
@@ -50,20 +51,24 @@ export default function ResumePage() {
                       <p className="text-text-primary">Wireframes, prototypes, user flows, design reviews, UI and interaction design</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-text-primary mb-2">Strategy & Collaboration</h3>
-                      <p className="text-text-primary">Product strategy, information architecture, stakeholder engagement, leadership</p>
+                      <h3 className="text-lg font-semibold text-text-primary mb-2">Software & AI</h3>
+                      <p className="text-text-primary">Figma, Sketch, Adobe Creative Cloud (Photoshop, Illustrator, InDesign), AI tools (Cursor, Claude, Copilot, Gemini, Figma Make)</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-text-primary mb-2">Tools & Software</h3>
-                      <p className="text-text-primary">Figma, Sketch, Adobe Creative Cloud (Photoshop, Illustrator, InDesign), Cursor, xCopilot</p>
+                      <h3 className="text-lg font-semibold text-text-primary mb-2">User Research</h3>
+                      <p className="text-text-primary">Competitive analysis, journey mapping, user interviews, UserTesting.com, Userbrain, Maze</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-text-primary mb-2">User Research & Analytics</h3>
-                      <p className="text-text-primary">Competitive analysis, user interviews, UserTesting.com, Userbrain, Hotjar, Fullstory</p>
+                      <h3 className="text-lg font-semibold text-text-primary mb-2">Analytics & Surveys</h3>
+                      <p className="text-text-primary">Google Analytics, Hotjar, Fullstory, Clarity, WalkMe, SurveyMonkey</p>
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-text-primary mb-2">Agile & Cross-functional Work</h3>
                       <p className="text-text-primary">Sprint planning, scrum team collaboration, accessibility best practices</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-text-primary mb-2">Strategy & Collaboration</h3>
+                      <p className="text-text-primary">Product strategy, information architecture, stakeholder engagement, leadership</p>
                     </div>
                   </div>
                 </div>
@@ -75,6 +80,36 @@ export default function ResumePage() {
               <div className="space-y-8">
                 <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
                   <div className="lg:col-span-3">
+                    <h3 className="text-lg font-medium text-text-primary">Stealth Health-tech Venture</h3>
+                    <p className="text-text-secondary">Fishers, IN</p>
+                    <p className="text-text-secondary">Oct 2025 – Present</p>
+                    <p className="text-text-secondary">Exploratory</p>
+                  </div>
+                  <div className="lg:col-span-7">
+                    <h4 className="text-lg font-semibold text-text-primary mb-3">Founder</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
+                        <span className="text-lg text-text-primary">Direct end-to-end venture strategy, business model definition, market viability, and competitive positioning</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
+                        <span className="text-lg text-text-primary">Execute product teardown of primary market competitor to identify UX gaps and technical opportunities for the MVP</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
+                        <span className="text-lg text-text-primary">Architect an AI-driven interface that utilizes Natural Language Processing (NLP) to translate semantic input into structured data, reducing user friction</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
+                        <span className="text-lg text-text-primary">Lead all product execution, from initial research and data strategy to the design and development of a functional v0 prototype</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+                  <div className="lg:col-span-3">
                     <h3 className="text-lg font-medium text-text-primary">Allied Solutions</h3>
                     <p className="text-text-secondary">Carmel, IN</p>
                     <p className="text-text-secondary">August 2024 – Present</p>
@@ -84,15 +119,11 @@ export default function ResumePage() {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Lead UX and interaction design for a new data reporting software product, ensuring alignment with business objectives and accessibility and usability best practices</span>
+                        <span className="text-lg text-text-primary">Lead UX and product design for a new data reporting software product, ensuring alignment with business objectives and accessibility and usability best practices, that resulted in a perfect 5/5 SUPR-Q score in beta</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Execute the design process by iteratively refining design work from usability testing with researchers, receiving commendation from stakeholders and executive leadership for speed and and agility</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Present work and collaborate in sprint and design reviews</span>
+                        <span className="text-lg text-text-primary">Execute the design process by iteratively refining design work from usability testing with researchers, receiving commendation from stakeholders and executive leadership for speed and agility</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
@@ -100,7 +131,7 @@ export default function ResumePage() {
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Help define product requirements and roadmap in collaboration with product management</span>
+                        <span className="text-lg text-text-primary">Collaborated with product management to define product requirements and roadmaps, ensuring key user needs were prioritized and integrated into the development cycle</span>
                       </li>
                     </ul>
                   </div>
@@ -117,15 +148,15 @@ export default function ResumePage() {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Engage in a cross-functional role that combines strategic planning as well as tactical delivery in digital marketing and UX</span>
+                        <span className="text-lg text-text-primary">Strategized and executed a cross-functional approach blending digital marketing with UX to deliver cohesive client solutions</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Manage client relationships with empathy and collaboration</span>
+                        <span className="text-lg text-text-primary">Nurtured strong, collaborative client relationships, ensuring project goals were aligned with business objectives and user needs</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Execute pixel perfect designs for landing pages and websites, optimizing for both SEO and user-centric experiences</span>
+                        <span className="text-lg text-text-primary">Designed and optimized user-centric landing pages and websites to improve user engagement, SEO, and conversion</span>
                       </li>
                     </ul>
                   </div>
@@ -142,15 +173,15 @@ export default function ResumePage() {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Conducted competitive analysis and heuristic evaluation to support website refresh strategy for a cybersecurity company</span>
+                        <span className="text-lg text-text-primary">Analyzed competitors and conducted a heuristic evaluation to inform and shape the website refresh strategy for a cybersecurity company</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Created mockups, website components, and an accessible color palette for brand refresh</span>
+                        <span className="text-lg text-text-primary">Designed website components, mockups, and a new, accessible color palette as part of a brand refresh</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Designed deliverables including landing pages, email campaigns, and social media assets</span>
+                        <span className="text-lg text-text-primary">Created a range of deliverables, including new landing pages, email campaigns, and social media assets to support the new brand direction</span>
                       </li>
                     </ul>
                   </div>
@@ -167,19 +198,11 @@ export default function ResumePage() {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Led user research and design of partner API experience to activate company growth strategy</span>
+                        <span className="text-lg text-text-primary">Grew organic search acquisition by 45% by implementing a new audience-focused content strategy and up-leveling organizational design maturity</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Up-leveled organizational design maturity by creating customer centric experiences</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Built marketing growth strategy to create 80% reduction in overhead costs</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Grew organic search acquisition by 45% by implementing an audience-focused content strategy</span>
+                        <span className="text-lg text-text-primary">Achieved an 80% reduction in overhead costs by leading the user research and design for a partner API experience to activate company growth strategy</span>
                       </li>
                     </ul>
                   </div>
@@ -221,19 +244,15 @@ export default function ResumePage() {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Developed foundational best practices, process documentation, and a design system, while leading a team of UX researchers and designers</span>
+                        <span className="text-lg text-text-primary">Established foundational UX practices, process documentation, and a comprehensive design system while leading a team of UX researchers and designers</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Acted as a liaison between UX design, product management, and engineering, guiding accuracy of cost and work estimates for our first enterprise mobile app project</span>
+                        <span className="text-lg text-text-primary">Created and socialized a 3-year UX practice growth roadmap to align with marketing and IT organization planning, assisting Product Owners with roadmaps and stakeholder management</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Assisted Product Owners with roadmaps and stakeholder relationship management</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 w-1.5 h-1.5 bg-logo rounded-full mt-2.5 mr-3"></div>
-                        <span className="text-lg text-text-primary">Created and socialized a 3-year UX practice growth roadmap to align with marketing and IT org planning</span>
+                        <span className="text-lg text-text-primary">Served as a key liaison between UX, product, and engineering, guiding accurate cost and work estimates for the company&apos;s first enterprise mobile app project</span>
                       </li>
                     </ul>
                   </div>

@@ -1,10 +1,12 @@
+import AssetImage from "@/components/AssetImage";
+
 export default function Footer() {
   return (
     <footer className="mt-8 py-10">
       <div className="max-w-5xl mx-auto px-6 sm:px-8">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <img src="/nwp-logo.svg" alt="NWP" className="h-7 w-auto" />
+          <AssetImage src="/nwp-logo.svg" alt="NWP" className="h-7 w-auto" />
         </div>
         
         {/* Horizontal rule */}

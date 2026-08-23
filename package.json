@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev:clean": "rm -rf .next && next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
+    "build:gh-pages": "STATIC_EXPORT=true next build",
     "start": "next start",
     "lint": "eslint",
-    "predeploy": "rm -rf .next out && npm run build",
+    "predeploy": "rm -rf .next out && npm run build:gh-pages",
     "deploy": "gh-pages -d out -t"
   },
   "dependencies": {
